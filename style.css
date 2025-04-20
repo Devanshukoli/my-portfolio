@@ -1,0 +1,22 @@
+*{
+    margin: 0,
+    padding: 0
+}
+
+header {
+    font-family: Roboto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header > h1 {
+    font-size: 50px;
+    cursor: pointer;
+}
+
+header > li {
+    curosr: pointer;
+    display: flex;
+    align-items: center;
+}
