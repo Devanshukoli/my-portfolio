@@ -2,7 +2,7 @@
 
 This is my portfolio website, I intended it made to showcase what i am as a software engineer. 
 
-Write a short sentence or two about this project and what it does. Be sure to include a link and a screenshot (we're front end devs so we can actually see our work!).
+[ ] include shcreen shots of page.
 
 **Link to project:** http://recruiters-love-seeing-live-demos.com/
 
