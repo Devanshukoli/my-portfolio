@@ -3,8 +3,11 @@
     padding: 0
 }
 
-header {
+body {
     font-family: Roboto;
+}
+
+header {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -19,4 +22,14 @@ header > li {
     cursor: pointer;
     display: flex;
     align-items: center;
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #efefef;
+    text-align: center;
 }
