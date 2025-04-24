@@ -19,9 +19,20 @@ header > h1 {
 }
 
 header > li {
-    cursor: pointer;
+    /* cursor: pointer; */
     display: flex;
     align-items: center;
+}
+
+a {
+    text-decoration : inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+a:visited {
+    text-decoration : inherit;
+    color: inherit;
 }
 
 footer {
