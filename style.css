@@ -35,6 +35,10 @@ a:visited {
     color: inherit;
 }
 
+section {
+  /* padding: 100px 0; */
+}
+
 #button {
   display: inline-block;
   background-color: #FF9800;
