@@ -127,6 +127,57 @@ section h3.section-subheading {
   visibility: visible;
 }
 
+.intro-header { 
+    padding-top: 50px; 
+    padding-bottom: 50px;
+    text-align: center;
+    background: url('https://40.media.tumblr.com/1b916597d3e174399cb7adadddb66ede/tumblr_nt5uk4psl31ud7rr3o1_1280.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 855px;
+}
+
+.bg-overlay {
+  background:rgba(0,0,0, 0.3);
+  height: 855px;
+}
+
+.intro-message {
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+.intro-message > h1 {
+    margin-top: -50px;
+    text-shadow: 2px 1px 2px #000;
+    font-size: 4em;
+    color: gray;
+}
+
+@media(max-width:767px) {
+    .intro-message {
+        padding-bottom: 15%;
+    }
+
+    .intro-message > h1 {
+        font-size: 3em;
+    }
+
+    ul.intro-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.intro-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+
+    .intro-divider {
+        width: 100%;
+    }
+}
+
 footer {
     font-size: 22px;
     position: relative;
@@ -136,4 +187,16 @@ footer {
     padding: 1rem;
     background-color: #efefef;
     text-align: center;
+}
+
+footer > #divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#divider > ul {
+  display: flex;
+  list-style: none;
+  
 }
