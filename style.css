@@ -182,6 +182,18 @@ section h3.section-subheading {
     text-align: center;
 }
 
+.contactus-head h3 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contactus-subhead h5 {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
 h3 {
     font-family: 'Roboto', sans-serif, 'arial';
     font-weight: 400;
@@ -202,47 +214,53 @@ input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid
 
 .styled-input {
     float: left;
-    width: 293px;
-    margin: 1rem 0;
+    width: 48%;
+    margin: 1%;
     position: relative;
     border-radius: 4px;
 }
 
 @media only screen and (max-width: 768px){
     .styled-input {
-        width:100%;
+        width:98%;
     }
+}
+
+.styled-input.wide { 
+    width: 98%;
+    margin: 1%;
 }
 
 .styled-input label {
     color: #999;
-    padding: 1.3rem 30px 1rem 30px;
+    padding: 1rem;
     position: absolute;
     top: 10px;
     left: 0;
     -webkit-transition: all 0.25s ease;
     transition: all 0.25s ease;
     pointer-events: none;
-}
-
-.styled-input.wide { 
-    width: 650px;
-    max-width: 100%;
+    background: transparent;
 }
 
 input,
 textarea {
-    padding: 30px;
-    border: 0;
+    padding: 1rem;
+    border: 1px solid #ddd;
     width: 100%;
     font-size: 1rem;
-    background-color: #2d2d2d;
-    color: white;
+    background-color: #f5f5f5;
+    color: #333;
     border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 input:focus,
-textarea:focus { outline: 0; }
+textarea:focus { 
+    outline: 0; 
+    background-color: #fff;
+    border-color: #4b8cfb;
+}
 
 input:focus ~ span,
 textarea:focus ~ span {
@@ -257,16 +275,19 @@ textarea {
 }
 
 .input-container {
-    width: 650px;
-    max-width: 100%;
-    margin: 20px auto 25px auto;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .submit-btn {
-    float: right;
+    width: 200px;
+    margin: 20px auto;
+    float: none;
+    display: block;
     padding: 7px 35px;
     border-radius: 60px;
-    display: inline-block;
     background-color: #4b8cfb;
     color: white;
     font-size: 18px;
@@ -304,25 +325,62 @@ input[type=checkbox]:checked + label {
 /* contact us styling end */
 
 
+/* Footer Fixes */
 footer {
-    font-size: 22px;
-    position: relative;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    background-color: #efefef;
-    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 2rem;
+    margin-top: 50px;
 }
 
 footer > #divider {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#divider > p {
+    margin: 0;
 }
 
 #divider > ul {
-  display: flex;
-  list-style: none;
-  
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+#divider > ul li a {
+    color: #fff;    
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#divider > ul li a:hover {
+    color: #4b8cfb;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .styled-input {
+        width: 98%;
+    }
+    
+    footer > #divider {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #divider > ul {
+        justify-content: center;
+    }
+    
+    .input-container {
+        padding: 10px;
+    }
 }
