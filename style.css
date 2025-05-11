@@ -298,151 +298,69 @@ section h3.section-subheading {
 
 
 /* contact us styling... */
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
 
-.contactus-head, .contactus-subhead {
-    text-align: center;
-}
+  .contact-container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+  }
 
-.contactus-head h3 {
-    font-size: 2.5em;
+  h2 {
+    margin-top: 0;
     color: #333;
-    margin-bottom: 10px;
-}
+  }
 
-.contactus-subhead h5 {
-    font-size: 1.2em;
+  h4 {
+    margin-bottom: 20px;
     color: #666;
-    margin-bottom: 30px;
-}
+    font-weight: normal;
+  }
 
-h3 {
-    font-family: 'Roboto', sans-serif, 'arial';
-    font-weight: 400;
-    font-size: 20px;
-    color: #9b9b9b;
-    line-height: 1.5;
-}
+  form {
+    display: flex;
+    flex-direction: column;
+  }
 
-/* ///// inputs /////*/
+  input, textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border 0.3s;
+  }
 
-input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
-    font-size: 0.75em;
-    color: #999;
-    top: -5px;
-    -webkit-transition: all 0.225s ease;
-    transition: all 0.225s ease;
-}
+  input:focus, textarea:focus {
+    border-color: #5776F6;
+    outline: none;
+  }
 
-.styled-input {
-    float: left;
-    width: 48%;
-    margin: 1%;
-    position: relative;
-    border-radius: 4px;
-}
-
-@media only screen and (max-width: 768px){
-    .styled-input {
-        width:98%;
-    }
-}
-
-.styled-input.wide { 
-    width: 98%;
-    margin: 1%;
-}
-
-.styled-input label {
-    color: #999;
-    padding: 1rem;
-    position: absolute;
-    top: 10px;
-    left: 0;
-    -webkit-transition: all 0.25s ease;
-    transition: all 0.25s ease;
-    pointer-events: none;
-    background: transparent;
-}
-
-input,
-textarea {
-    padding: 1rem;
-    border: 1px solid #ddd;
-    width: 100%;
-    font-size: 1rem;
-    background-color: #f5f5f5;
-    color: #333;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-}
-
-input:focus,
-textarea:focus { 
-    outline: 0; 
-    background-color: #fff;
-    border-color: #4b8cfb;
-}
-
-input:focus ~ span,
-textarea:focus ~ span {
-    width: 100%;
-    -webkit-transition: all 0.075s ease;
-    transition: all 0.075s ease;
-}
-
-textarea {
-    width: 100%;
-    min-height: 15em;
-}
-
-.input-container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.submit-btn {
-    width: 200px;
-    margin: 20px auto;
-    float: none;
-    display: block;
-    padding: 7px 35px;
-    border-radius: 60px;
-    background-color: #4b8cfb;
+  button {
+    padding: 12px;
+    background-color: #5776F6;
     color: white;
-    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
     cursor: pointer;
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.06),
-              0 2px 10px 0 rgba(0,0,0,0.07);
-    -webkit-transition: all 300ms ease;
-    transition: all 300ms ease;
-}
+    transition: background-color 0.3s;
+  }
 
-.submit-btn:hover {
-    transform: translateY(1px);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10),
-              0 1px 1px 0 rgba(0,0,0,0.09);
-}
-
-@media (max-width: 768px) {
-    .submit-btn {
-        width:100%;
-        float: none;
-        text-align:center;
-    }
-}
-
-input[type=checkbox] + label {
-  color: #ccc;
-  font-style: italic;
-} 
-
-input[type=checkbox]:checked + label {
-  color: #f00;
-  font-style: normal;
-}
-
+  button:hover {
+    background-color: #3e5fe0;
+  }
 /* contact us styling end */
 
 
