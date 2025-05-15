@@ -1,30 +1,32 @@
-function validate() {
-    var name = document.getElementById('your-name').value
-    var email = document.getElementById('email').value
-    var message = document.getElementById('message').value
+function validate(event) {
+    if (event) event.preventDefault();
+    var name = document.getElementById('your-name').value;
+    var email = document.getElementById('email').value;
+    var message = document.getElementById('message').value;
     const errorMessage = document.getElementById("errorMessage"); 
 
     errorMessage.style.padding = "12px";
 
     let text;
-    if (name.length < 0) {
-        text = "Please Enter Name."
+    if (name.trim() === "") {
+        text = "Please Enter Name.";
         errorMessage.innerHTML = text;
-        return;
+        return false;
     }
 
-    if (email.indexOf("@") == -1 || email.length < 0) {
+    if (email.indexOf("@") === -1 || email.trim() === "") {
         text = "Please Enter Valid Email";
         errorMessage.innerHTML = text;
-        return
+        return false;
     }
 
-    if (message.length <= 0) {
-        text = "Pleaes Enter Message";
+    if (message.trim() === "") {
+        text = "Please Enter Message";
         errorMessage.innerHTML = text;
-        return;
+        return false;
     }
 
-    alert("Form Submitted Successfully!")
-    return;
+    errorMessage.innerHTML = "";
+    alert("Form Submitted Successfully!");
+    return true;
 }
