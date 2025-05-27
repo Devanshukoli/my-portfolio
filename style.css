@@ -305,6 +305,10 @@ section h3.section-subheading {
   margin: 20px;
 }
 
+.btn-frame > button > a {
+  all: unset;
+}
+
 .custom-btn {
   width: 130px;
   height: 40px;
