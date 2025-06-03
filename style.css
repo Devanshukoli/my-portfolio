@@ -82,10 +82,13 @@ section h3.section-subheading {
   }
 }
 
-.service-heading {
-  margin: 15px 0;
-  text-transform: none;
+/* service-css start */
+# services > .container {
+  max-width: 1320px;
 }
+
+
+/* service css end */
 
 #button {
   display: inline-block;
