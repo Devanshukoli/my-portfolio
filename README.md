@@ -2,11 +2,16 @@
 
 This is my portfolio website, I intended it made to showcase what i am as a software engineer. 
 
-[ ] include shcreen shots of page.
+[ ] include screen shots of page.
 
 **Link to project:** http://recruiters-love-seeing-live-demos.com/
 
 ![alt tag](http://placecorgi.com/1200/650)
+
+## Current Development
+
+[ ] Pending blog functionality.
+[ ] Add service section. 
 
 ## How It's Made:
 
