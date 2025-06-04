@@ -119,6 +119,46 @@ section h3.section-subheading {
   }
 }
 
+#services {
+  padding: 60px 0 40px 0;
+}
+
+#services .box {
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  border-radious: 10px;
+  margin: 0 10px 40px 10px;
+  background: #fff;
+  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+
+#services .box:hover {
+  transform: scale(1.1)
+}
+
+#services .icon {
+  margin: 0 auto 15x auto;
+  pading-top: 12px;
+  display: inline-block;
+  text-align: center;
+  border-radious: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+#services .icon .service-icon {
+  font-size: 36px;
+  line-height: 1;
+}
+
+#services .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
 /* service css end */
 
 #button {
