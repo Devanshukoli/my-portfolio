@@ -159,6 +159,21 @@ section h3.section-subheading {
   margin-bottom: 15px;
   font-size: 18px;
 }
+
+#services .title a {
+  color: #111;
+}
+
+#services .box:hover .title a {
+  text-decoration: none;
+}
+
+#services .description {
+  font-size: 14px;
+  line-height: 28px;
+  margin-bottom: 0;
+  text-align: left;
+}
 /* service css end */
 
 #button {
