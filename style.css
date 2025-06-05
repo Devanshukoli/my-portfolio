@@ -83,44 +83,25 @@ section h3.section-subheading {
 }
 
 /* service-css start */
-# services > .container {
+#services > .container {
   max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-.section-bg {
-  background: f5f8fd;
+#services .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
 }
 
-.section-header {
-  all: unset;
-}
-
-.section-header > h3 {
-  font-size: 2.5rem;
-  color: #333;
-  text-align: center;
-  font-weight: 700;
-  position: relative;
-  margin-bottom: 0.5rem;
-}
-
-.section-header > p {
-  text-align: center;
-  margin: auto;
-  padding-bottom: 50px;
-  color: #666;
-  font-size: 1.1rem;
-  width: 70%;
-}
-
-@media (max-width: 767px) {
-  .section-header p {
-    width: 100%;
-  }
-}
-
-#services {
-  padding: 60px 0 40px 0;
+#services .col-md-6.col-lg-4 {
+  flex: 1 1 300px;
+  max-width: 350px;
+  min-width: 250px;
+  margin: 0 0 2rem 0;
+  display: flex;
 }
 
 #services .box {
@@ -133,6 +114,10 @@ section h3.section-subheading {
   box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
   transition: all 0.3s ease-in-out;
   text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
 }
 
 #services .box:hover {
@@ -176,42 +161,52 @@ section h3.section-subheading {
   margin-bottom: 0;
   text-align: left;
 }
-/* service css end */
 
-#button {
-  display: inline-block;
-  background-color: #ff9800;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  border-radius: 4px;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 1000;
+@media (max-width: 1024px) {
+  #services .row {
+    gap: 1.2rem;
+  }
+  #services .col-md-6.col-lg-4 {
+    max-width: 100%;
+    min-width: 200px;
+  }
 }
-#button::after {
-  content: "\f077";
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 2em;
-  line-height: 50px;
-  color: #fff;
+
+@media (max-width: 768px) {
+  #services {
+    padding: 40px 0 20px 0;
+  }
+  #services .row {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  #services .col-md-6.col-lg-4 {
+    max-width: 100%;
+    min-width: 0;
+    margin: 0 0 1.5rem 0;
+  }
+  #services .box {
+    padding: 20px;
+    font-size: 15px;
+  }
+  .section-header > h3 {
+    font-size: 2rem;
+  }
 }
-#button:hover {
-  cursor: pointer;
-  background-color: #333;
-}
-#button:active {
-  background-color: #555;
-}
-#button.show {
-  opacity: 1;
-  visibility: visible;
+
+@media (max-width: 480px) {
+  #services .box {
+    padding: 12px;
+    font-size: 14px;
+  }
+  .section-header > h3 {
+    font-size: 1.3rem;
+  }
+  .section-header > p {
+    font-size: 1rem;
+    padding-bottom: 30px;
+  }
 }
 
 .intro-header {
