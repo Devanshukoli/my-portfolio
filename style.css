@@ -83,6 +83,44 @@ section h3.section-subheading {
 }
 
 /* service-css start */
+# services > .container {More actions
+  max-width: 1320px;
+}
+
+.section-bg {
+  background: f5f8fd;
+}
+
+.section-header {
+  all: unset;
+}
+
+.section-header > h3 {
+  font-size: 2.5rem;
+  color: #333;
+  text-align: center;
+  font-weight: 700;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.section-header > p {
+  text-align: center;
+  margin: auto;
+  padding-bottom: 50px;
+  color: #666;
+  font-size: 1.1rem;
+  width: 70%;
+}
+
+@media (max-width: 767px) {
+  .section-header p {
+    width: 100%;
+  }
+}
+
+
+
 #services > .container {
   max-width: 1320px;
   margin: 0 auto;
