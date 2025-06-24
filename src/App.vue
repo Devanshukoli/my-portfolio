@@ -1,0 +1,239 @@
+<script setup>
+import Header from "./components/Header.vue";
+import Footer from "./components/footer.vue";
+</script>
+
+<template>
+  <Header />
+
+  <main>
+    <a id="button"></a>
+
+    <section>
+      <!-- Here I want to put my visualizer or similar-->
+      <div class="intro-header">
+        <div class="bg-overlay">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="intro-message">
+                  <h1>Softwar Engineer</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.container -->
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services section-bg">
+      <div class="container">
+        <header class="section-header">
+          <h3>Services</h3>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa,
+            saepe, assumenda commodi non modi aliquid debitis sunt quidem ipsum
+            praesentium quo! Modi assumenda architecto magnam tempora provident
+            voluptatum ratione fuga?
+          </p>
+        </header>
+
+        <!-- This below is card -->
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <div class="box">
+              <div class="icon" style="background: #000">
+                <i
+                  class="fa fa-clipboard service-icon"
+                  style="color: #c59c35"
+                ></i>
+              </div>
+
+              <h4 class="title"><a href="">Service 2</a></h4>
+
+              <p class="description">
+                Laudem latine persequeris id sed, ex fabulas delectus quo. No
+                vel partiendo abhorreant vituperatoribus.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="box">
+              <div class="icon" style="background: #000">
+                <i
+                  class="fa fa-clipboard service-icon"
+                  style="color: #c59c35"
+                ></i>
+              </div>
+
+              <h4 class="title"><a href="">Service 2</a></h4>
+
+              <p class="description">
+                Laudem latine persequeris id sed, ex fabulas delectus quo. No
+                vel partiendo abhorreant vituperatoribus.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="box">
+              <div class="icon" style="background: #000">
+                <i
+                  class="fa fa-clipboard service-icon"
+                  style="color: #c59c35"
+                ></i>
+              </div>
+
+              <h4 class="title"><a href="">Service 2</a></h4>
+
+              <p class="description">
+                Laudem latine persequeris id sed, ex fabulas delectus quo. No
+                vel partiendo abhorreant vituperatoribus.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="box">
+              <div class="icon" style="background: #000">
+                <i
+                  class="fa fa-clipboard service-icon"
+                  style="color: #c59c35"
+                ></i>
+              </div>
+
+              <h4 class="title"><a href="">Service 2</a></h4>
+
+              <p class="description">
+                Laudem latine persequeris id sed, ex fabulas delectus quo. No
+                vel partiendo abhorreant vituperatoribus.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="box">
+              <div class="icon" style="background: #000">
+                <i
+                  class="fa fa-clipboard service-icon"
+                  style="color: #c59c35"
+                ></i>
+              </div>
+
+              <h4 class="title"><a href="">Service 2</a></h4>
+
+              <p class="description">
+                Laudem latine persequeris id sed, ex fabulas delectus quo. No
+                vel partiendo abhorreant vituperatoribus.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="box">
+              <div class="icon" style="background: #000">
+                <i
+                  class="fa fa-clipboard service-icon"
+                  style="color: #c59c35"
+                ></i>
+              </div>
+
+              <h4 class="title"><a href="">Service 2</a></h4>
+
+              <p class="description">
+                Laudem latine persequeris id sed, ex fabulas delectus quo. No
+                vel partiendo abhorreant vituperatoribus.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog-section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Latest Blogs</h2>
+          <p>Thoughts, learnings & experiences</p>
+        </div>
+
+        <div class="blog-grid">
+          <article class="blog-card">
+            <div class="card-img">
+              <img
+                src="https://via.placeholder.com/400x250"
+                alt="Blog thumbnail"
+              />
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="card-content">
+              <h3>Understanding Modern JavaScript</h3>
+              <p>
+                Exploring the latest features and best practices in modern
+                JavaScript development...
+              </p>
+              <div class="card-footer">
+                <span class="date">June 15, 2024</span>
+                <a href="#" class="read-more">Read More →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="card-img">
+              <img
+                src="https://via.placeholder.com/400x250"
+                alt="Blog thumbnail"
+              />
+              <span class="tag">Web Dev</span>
+            </div>
+            <div class="card-content">
+              <h3>CSS Grid Mastery</h3>
+              <p>
+                A comprehensive guide to mastering CSS Grid layout system for
+                modern web design...
+              </p>
+              <div class="card-footer">
+                <span class="date">June 10, 2024</span>
+                <a href="#" class="read-more">Read More →</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- here comes the 'read more' button which will take it blog page of portfolio. -->
+        <div class="btn-frame">
+          <button class="custom-btn btn">
+            <a href="./blog.html">Read More</a>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contactus">
+      <div class="contact-container">
+        <h2>Contact Me!</h2>
+        <h4>Just send me what you like to discuss</h4>
+
+        <form onsubmit="return validate(event)">
+          <input type="text" id="your-name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <textarea
+            rows="5"
+            id="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit">Send</button>
+          <div id="errorMessage"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</template>
+
+<style lang="css" scoped></style>
