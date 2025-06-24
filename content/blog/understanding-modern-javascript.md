@@ -16,13 +16,13 @@ One of the most significant improvements in modern JavaScript is the introductio
 
 ```javascript
 async function fetchUserData() {
-    try {
-        const response = await fetch('https://api.example.com/user');
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Error fetching user data:', error);
-    }
+  try {
+    const response = await fetch("https://api.example.com/user");
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+  }
 }
 ```
 
@@ -35,12 +35,13 @@ Modern JavaScript supports a native module system:
 export const add = (a, b) => a + b;
 
 // main.js
-import { add } from './math.js';
+import { add } from "./math.js";
 ```
 
 ## Learn More
 
 Check out these resources to dive deeper:
+
 - [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [JavaScript.info](https://javascript.info/)
 

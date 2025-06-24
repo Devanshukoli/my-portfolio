@@ -42,7 +42,9 @@ a:after {
   left: 50%;
   position: absolute;
   background: #000;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  transition:
+    width 0.3s ease 0s,
+    left 0.3s ease 0s;
   width: 0;
 }
 
@@ -83,7 +85,7 @@ section h3.section-subheading {
 }
 
 /* service-css start */
-# services > .container {More actions
+# services > .container {
   max-width: 1320px;
 }
 
@@ -118,8 +120,6 @@ section h3.section-subheading {
     width: 100%;
   }
 }
-
-
 
 #services > .container {
   max-width: 1320px;
@@ -336,7 +336,9 @@ section h3.section-subheading {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .blog-card:hover {
@@ -418,7 +420,6 @@ section h3.section-subheading {
   }
 }
 
-
 .btn-frame {
   width: 90%;
   margin: 40px auto;
@@ -445,38 +446,42 @@ section h3.section-subheading {
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
-  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
-  7px 7px 20px 0px rgba(0,0,0,.1),
-   4px 4px 5px 0px rgba(0,0,0,.1);
+  box-shadow:
+    inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+    4px 4px 5px 0px rgba(0, 0, 0, 0.1);
   outline: none;
 }
 
 .btn {
-  background: rgb(96,9,240);
-  background: linear-gradient(0deg, rgba(96,9,240,1) 0%, rgba(129,5,240,1) 100%);
+  background: rgb(96, 9, 240);
+  background: linear-gradient(
+    0deg,
+    rgba(96, 9, 240, 1) 0%,
+    rgba(129, 5, 240, 1) 100%
+  );
   border: none;
-  
 }
 .btn:before {
   height: 0%;
   width: 2px;
 }
 .btn:hover {
-  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
-              -4px -4px 6px 0 rgba(116, 125, 136, .5), 
-    inset -4px -4px 6px 0 rgba(255,255,255,.2),
-    inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+  box-shadow:
+    4px 4px 6px 0 rgba(255, 255, 255, 0.5),
+    -4px -4px 6px 0 rgba(116, 125, 136, 0.5),
+    inset -4px -4px 6px 0 rgba(255, 255, 255, 0.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, 0.4);
 }
-
 
 /* blog Section end.... */
 
 /* contact us styling... */
 
 #contactus {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact-container {
@@ -536,7 +541,6 @@ button:hover {
 }
 
 /* contact us styling end */
-
 
 /* Footer Fixes */
 footer {
@@ -600,79 +604,79 @@ footer > #divider {
 
 /* Markdown Content Styling */
 .markdown-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 .markdown-content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin: 1.5rem 0;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1.5rem 0;
 }
 
 .markdown-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: #333;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #333;
 }
 
 .markdown-content h2 {
-    font-size: 2rem;
-    margin: 2rem 0 1rem;
-    color: #444;
+  font-size: 2rem;
+  margin: 2rem 0 1rem;
+  color: #444;
 }
 
 .markdown-content h3 {
-    font-size: 1.5rem;
-    margin: 1.5rem 0 1rem;
-    color: #555;
+  font-size: 1.5rem;
+  margin: 1.5rem 0 1rem;
+  color: #555;
 }
 
 .markdown-content p {
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-    color: #666;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: #666;
 }
 
 .markdown-content code {
-    background: #f4f4f4;
-    padding: 0.2em 0.4em;
-    border-radius: 3px;
-    font-size: 0.9em;
-    font-family: 'Courier New', Courier, monospace;
+  background: #f4f4f4;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .markdown-content pre {
-    background: #f4f4f4;
-    padding: 1rem;
-    border-radius: 5px;
-    overflow-x: auto;
-    margin: 1.5rem 0;
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
 }
 
 .markdown-content pre code {
-    background: none;
-    padding: 0;
+  background: none;
+  padding: 0;
 }
 
 .markdown-content a {
-    color: #4b8cfb;
-    text-decoration: none;
+  color: #4b8cfb;
+  text-decoration: none;
 }
 
 .markdown-content a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-.markdown-content ul, 
+.markdown-content ul,
 .markdown-content ol {
-    margin: 1rem 0;
-    padding-left: 2rem;
+  margin: 1rem 0;
+  padding-left: 2rem;
 }
 
 .markdown-content li {
-    margin: 0.5rem 0;
-    color: #666;
+  margin: 0.5rem 0;
+  color: #666;
 }
