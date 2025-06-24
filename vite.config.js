@@ -1,3 +1,6 @@
+import vue from '@vitejs/plugin-vue'
+import vueDevTools from 'vite-plugin-vue-devtools'
+
 import { defineConfig } from 'vite';
 
 export default defineConfig({
@@ -7,5 +10,9 @@ export default defineConfig({
     fs: {
       allow: ['content'] // Allow serving files from content directory
     }
-  }
+  },
+  plugins: [
+    vue(),
+    vueDevTools()
+  ]
 })
