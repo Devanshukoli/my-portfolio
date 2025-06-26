@@ -200,11 +200,11 @@
   width: 130px;
   height: 40px;
   color: #fff;
-  border-radious: 5px;
+  border-radius: 5px;
   padding: 10px 25px;
   font-weight: 500;
   background: transparent;
-  curosr: pointer;
+  cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
