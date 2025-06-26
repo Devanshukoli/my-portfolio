@@ -1,5 +1,7 @@
 <script setup>
 import Header from "./components/Header.vue";
+import BlogView from "./view/BlogView.vue";
+import ContactView from "./view/ContactView.vue";
 import Footer from "./components/Footer.vue";
 </script>
 
@@ -152,85 +154,9 @@ import Footer from "./components/Footer.vue";
       </div>
     </section>
 
-    <section class="blog-section">
-      <div class="container">
-        <div class="section-title">
-          <h2>Latest Blogs</h2>
-          <p>Thoughts, learnings & experiences</p>
-        </div>
-
-        <div class="blog-grid">
-          <article class="blog-card">
-            <div class="card-img">
-              <img
-                src="https://via.placeholder.com/400x250"
-                alt="Blog thumbnail"
-              />
-              <span class="tag">JavaScript</span>
-            </div>
-            <div class="card-content">
-              <h3>Understanding Modern JavaScript</h3>
-              <p>
-                Exploring the latest features and best practices in modern
-                JavaScript development...
-              </p>
-              <div class="card-footer">
-                <span class="date">June 15, 2024</span>
-                <a href="#" class="read-more">Read More →</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="blog-card">
-            <div class="card-img">
-              <img
-                src="https://via.placeholder.com/400x250"
-                alt="Blog thumbnail"
-              />
-              <span class="tag">Web Dev</span>
-            </div>
-            <div class="card-content">
-              <h3>CSS Grid Mastery</h3>
-              <p>
-                A comprehensive guide to mastering CSS Grid layout system for
-                modern web design...
-              </p>
-              <div class="card-footer">
-                <span class="date">June 10, 2024</span>
-                <a href="#" class="read-more">Read More →</a>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- here comes the 'read more' button which will take it blog page of portfolio. -->
-        <div class="btn-frame">
-          <button class="custom-btn btn">
-            <a href="./blog.html">Read More</a>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section id="contactus">
-      <div class="contact-container">
-        <h2>Contact Me!</h2>
-        <h4>Just send me what you like to discuss</h4>
-
-        <form onsubmit="return validate(event)">
-          <input type="text" id="your-name" placeholder="Your Name" required />
-          <input type="email" id="email" placeholder="Your Email" required />
-          <textarea
-            rows="5"
-            id="message"
-            placeholder="Your Message"
-            required
-          ></textarea>
-          <button type="submit">Send</button>
-          <div id="errorMessage"></div>
-        </form>
-      </div>
-    </section>
+    <BlogView />
+    <ContactView />
+    
   </main>
 
   <Footer />
