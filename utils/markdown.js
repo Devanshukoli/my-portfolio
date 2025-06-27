@@ -12,7 +12,7 @@ marked.setOptions({
 
 // Get all blog posts
 export function getAllPosts() {
-  const postsDirectory = path.join(process.cwd(), "content/blog");
+  const postsDirectory = path.join(process.cwd(), "./blog");
   const fileNames = fs.readdirSync(postsDirectory);
 
   const posts = fileNames.map((fileName) => {
