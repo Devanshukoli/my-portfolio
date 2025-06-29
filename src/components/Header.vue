@@ -1,6 +1,6 @@
 <script setup></script>
 
-<tempalte lang="html">
+<template>
 <header>
   <h1 href="#">Devanshu Koli</h1>
   <ul>
@@ -13,7 +13,7 @@
     </li>
   </ul>
 </header>
-</tempalte>
+</template>
 
 <style lang="css" scoped>
 header {
