@@ -1,10 +1,10 @@
 import { fn } from "storybook/internal/test";
 
-import IFooter from "./Footer.vue";
+import IHeader from "./Header.vue";
 
 export default {
-  title: "Footer/Footer",
-  component: IFooter,
+  title: "Header/Header",
+  component: IHeader,
   tags: ["autodocs"],
   argTypes: {
     size: {
@@ -21,13 +21,13 @@ export default {
 export const Primary = {
   args: {
     primary: true,
-    label: "Footer",
+    label: "Header",
   },
 };
 
 export const Secondary = {
   args: {
-    label: "Footer",
+    label: "Header",
     size: "small",
     backgroundColor: "yellow",
   },
@@ -36,13 +36,13 @@ export const Secondary = {
 export const Large = {
   args: {
     size: "large",
-    label: "Footer",
+    label: "Header",
   },
 };
 
 export const Small = {
   args: {
     size: "small",
-    label: "Footer",
+    label: "Header",
   },
 };
