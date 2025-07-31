@@ -1,43 +1,86 @@
-# My Awesome Portfolio
+# Devanshu Koli's Portfolio
+[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/Devanshukoli/my-portfolio)
 
-This is my portfolio website, I intended it made to showcase what i am as a software engineer.
+This repository contains the source code for my personal portfolio website. It's designed to showcase my journey, projects, and skills as a software engineer, built with Vue.js and Vite.
 
-[ ] include screen shots of page.
+## ✨ Features
 
-**Link to project:** http://recruiters-love-seeing-live-demos.com/
+*   **Single Page Application (SPA):** A smooth and fast user experience powered by Vue.js and Vue Router.
+*   **Component-Driven Development:** UI components are developed in isolation and documented using **Storybook**.
+*   **Dynamic Blog:** The blog section is dynamically generated from Markdown files, making it easy to publish new articles.
+*   **Responsive Design:** The layout is fully responsive and adapts to various devices, from desktops to mobile phones.
+*   **Contact Form:** A functional contact form for visitors to get in touch.
 
-![alt tag](http://placecorgi.com/1200/650)
+## 🛠️ Tech Stack
 
-## Current Development
+*   **Framework:** [Vue.js 3](https://vuejs.org/)
+*   **Build Tool:** [Vite](https://vitejs.dev/)
+*   **Routing:** [Vue Router](https://router.vuejs.org/)
+*   **Component Development:** [Storybook](https://storybook.js.org/)
+*   **Markdown Parsing:** [Marked](https://marked.js.org/) & [gray-matter](https://github.com/jonschlinkert/gray-matter)
+*   **Styling:** CSS3
+*   **Testing:** [Vitest](https://vitest.dev/), [Playwright](https://playwright.dev/)
 
-[ ] Pending blog functionality.
-[ ] Add service section.
+## 🚀 Getting Started
 
-## How It's Made:
+To run this project locally, follow these steps:
 
-**Tech used:** HTML, CSS, JavaScript, Vite
+1.  **Clone the repository:**
+    ```sh
+    git clone https://github.com/Devanshukoli/my-portfolio.git
+    ```
 
-- This portfolio is built using html, css, js and vite.
-- I wanted to build this portfolio so i can put all my tech journey in one place and it's easy to track it for myself as well.
+2.  **Navigate to the project directory:**
+    ```sh
+    cd my-portfolio
+    ```
 
-## Optimizations
+3.  **Install dependencies:**
+    ```sh
+    npm install
+    ```
 
-_(optional)_
+4.  **Run the development server:**
+    ```sh
+    npm run dev
+    ```
+    The application will be available at `http://localhost:5173`.
 
-You don't have to include this section but interviewers _love_ that you can not only deliver a final product that looks great but also functions efficiently. Did you write something then refactor it later and the result was 5x faster than the original implementation? Did you cache your assets? Things that you write in this section are **GREAT** to bring up in interviews and you can use this section as reference when studying for technical interviews!
+## 📜 Available Scripts
 
-## Lessons Learned:
+This project includes several scripts to help with development and deployment:
 
-No matter what your experience level, being an engineer means continuously learning. Every time you build something you always have those _whoa this is awesome_ or _fuck yeah I did it!_ moments. This is where you should share those moments! Recruiters and interviewers love to see that you're self-aware and passionate about growing.
+*   `npm run dev`: Starts the Vite development server with Hot Module Replacement (HMR).
+*   `npm run build`: Compiles the Vue.js application for production into the `dist` directory.
+*   `npm run preview`: Serves the production build locally to preview before deployment.
+*   `npm run storybook`: Launches the Storybook server to view and develop UI components in isolation.
+*   `npm run build-storybook`: Creates a static build of the Storybook for deployment.
 
-- So I am really strugling with css and it's debuggin.
+## 📖 Storybook
 
-## Examples:
+This project uses Storybook for UI component development. It allows for building, viewing, and testing components in an isolated environment.
 
-Take a look at these couple examples that I have in my own portfolio:
+To run Storybook:
+```sh
+npm run storybook
+```
+This will open Storybook in your browser, where you can browse the component library.
 
-**Palettable:** https://github.com/alecortega/palettable
+## 📂 Project Structure
 
-**Twitter Battle:** https://github.com/alecortega/twitter-battle
+The project follows a standard Vue.js structure:
 
-**Patch Panel:** https://github.com/alecortega/patch-panel
+```
+devanshukoli-my-portfolio/
+├── .storybook/         # Storybook configuration files
+├── src/
+│   ├── assets/         # Global styles and assets
+│   ├── blogs/          # Markdown files for blog posts
+│   ├── components/     # Reusable Vue components (Header, Footer)
+│   ├── router/         # Vue Router configuration
+│   ├── stories/        # Storybook stories for components
+│   └── view/           # Page-level components (Home, About, Blog)
+├── utils/              # Utility scripts (e.g., markdown parser)
+├── index.html          # Main HTML entry point
+├── package.json        # Project dependencies and scripts
+└── vite.config.js      # Vite configuration
