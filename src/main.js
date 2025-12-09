@@ -1,14 +1,17 @@
 import './assets/style.css'
+import './assets/theme.css'
 
-import {createApp } from 'vue'
+import { createApp } from 'vue'
+import { MotionPlugin } from '@vueuse/motion'
 import App from './App.vue'
 import router from './router'
 
 const app = createApp(App)
 
 app.use(router)
+app.use(MotionPlugin)
 
-app.mount(`#app`)
+app.mount('#app')
 
 // Handle blog read more button click
 // document.addEventListener(\"DOMContentLoaded\", () => {

@@ -65,7 +65,7 @@
 <style scoped>
 .blog-section {
   padding: 4rem 0;
-  background-color: #f8f9fa;
+  background-color: var(--bg-secondary);
 }
 
 .section-title {
@@ -75,12 +75,12 @@
 
 .section-title h2 {
   font-size: 2.5rem;
-  color: #333;
+  color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
 .section-title p {
-  color: #666;
+  color: var(--text-secondary);
   font-size: 1.1rem;
 }
 
@@ -94,10 +94,10 @@
 }
 
 .blog-card {
-  background: #fff;
+  background: var(--bg-card);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 15px var(--shadow-color);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -105,7 +105,7 @@
 
 .blog-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 20px var(--shadow-color);
 }
 
 .card-img {
@@ -122,7 +122,7 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: #4b8cfb;
+  background: var(--accent-color);
   color: #fff;
   padding: 0.5rem 1rem;
   border-radius: 20px;
@@ -135,12 +135,12 @@
 
 .card-content h3 {
   font-size: 1.25rem;
-  color: #333;
+  color: var(--text-primary);
   margin-bottom: 0.75rem;
 }
 
 .card-content p {
-  color: #666;
+  color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.5;
   margin-bottom: 1rem;

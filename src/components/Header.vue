@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+import ThemeToggle from './ThemeToggle.vue';
+</script>
 
 <template>
 <header>
@@ -9,7 +11,7 @@
     <li><a href="./blog.html">Blogs</a></li>
     <li><a href="./contact.html">Contact</a></li>
     <li>
-      <!-- Here will come theme toggler functionality-->
+      <ThemeToggle />
     </li>
   </ul>
 </header>
@@ -28,6 +30,7 @@ header > ul {
   padding: 0;
   list-style: none;
   text-align: center;
+  align-items: center;
 }
 
 header > li {
@@ -36,11 +39,12 @@ header > li {
 }
 
 a {
-  color: #000;
+  color: var(--text-primary);
   text-decoration: none;
   display: inline-block;
   padding: 15px 20px;
   position: relative;
+  transition: color 0.3s ease;
 }
 
 a:after {
@@ -51,7 +55,7 @@ a:after {
   height: 2px;
   left: 50%;
   position: absolute;
-  background: #000;
+  background: var(--text-primary);
   transition:
     width 0.3s ease 0s,
     left 0.3s ease 0s;

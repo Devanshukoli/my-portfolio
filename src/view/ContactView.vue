@@ -30,22 +30,22 @@
 }
 
 .contact-container {
-  background: white;
+  background: var(--bg-card);
   padding: 40px;
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px var(--shadow-color);
   max-width: 500px;
   width: 100%;
 }
 
 h2 {
   margin-top: 0;
-  color: #333;
+  color: var(--text-primary);
 }
 
 h4 {
   margin-bottom: 20px;
-  color: #666;
+  color: var(--text-secondary);
   font-weight: normal;
 }
 

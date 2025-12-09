@@ -1,0 +1,37 @@
+:root {
+  /* High contrast light mode */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f8fd;
+  /* Matches existing service bg roughly */
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #444444;
+  /* Dark refined info text */
+  --accent-color: #0056b3;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+.dark {
+  /* High contrast dark mode */
+  --bg-primary: #121212;
+  --bg-secondary: #000000;
+  --bg-card: #1e1e1e;
+  --text-primary: #e0e0e0;
+  --text-secondary: #aaaaaa;
+  --accent-color: #66b2ff;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--text-primary);
+}
+
+a:hover {
+  color: var(--accent-color);
+}
