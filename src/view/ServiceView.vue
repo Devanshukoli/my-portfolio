@@ -133,7 +133,7 @@
 }
 
 .section-bg {
-  background: f5f8fd;
+  background: var(--bg-secondary);
 }
 
 .section-header {
@@ -142,7 +142,7 @@
 
 .section-header > h3 {
   font-size: 2.5rem;
-  color: #333;
+  color: var(--text-primary);
   text-align: center;
   font-weight: 700;
   position: relative;
@@ -153,7 +153,7 @@
   text-align: center;
   margin: auto;
   padding-bottom: 50px;
-  color: #666;
+  color: var(--text-secondary);
   font-size: 1.1rem;
   width: 70%;
 }
@@ -191,8 +191,8 @@
   overflow: hidden;
   border-radius: 10px;
   margin: 0 10px 40px 10px;
-  background: #fff;
-  box-shadow: 0 10px 29px 0 rgba(68, 88, 144, 0.1);
+  background: var(--bg-card);
+  box-shadow: 0 10px 29px 0 var(--shadow-color);
   transition: all 0.3s ease-in-out;
   text-align: center;
   width: 100%;
@@ -227,7 +227,7 @@
 }
 
 #services .title a {
-  color: #111;
+  color: var(--text-primary);
 }
 
 #services .box:hover .title a {

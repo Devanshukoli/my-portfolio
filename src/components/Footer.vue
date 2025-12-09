@@ -27,8 +27,8 @@
 
 <style lang="css" scoped>
 footer {
-  background-color: #333;
-  color: #fff;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
   padding: 2rem;
   margin-top: 50px;
 }
@@ -102,25 +102,25 @@ footer > #divider {
 .markdown-content h1 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .markdown-content h2 {
   font-size: 2rem;
   margin: 2rem 0 1rem;
-  color: #444;
+  color: var(--text-secondary);
 }
 
 .markdown-content h3 {
   font-size: 1.5rem;
   margin: 1.5rem 0 1rem;
-  color: #555;
+  color: var(--text-secondary);
 }
 
 .markdown-content p {
   line-height: 1.7;
   margin-bottom: 1.5rem;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .markdown-content code {
@@ -161,6 +161,6 @@ footer > #divider {
 
 .markdown-content li {
   margin: 0.5rem 0;
-  color: #666;
+  color: var(--text-secondary);
 }
 </style>
