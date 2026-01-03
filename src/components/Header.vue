@@ -4,12 +4,14 @@ import ThemeToggle from './ThemeToggle.vue';
 
 <template>
 <header>
-  <h1 href="#">Devanshu Koli</h1>
+  <router-link to="/" class="logo"><h1>Devanshu Koli</h1></router-link>
   <ul>
-    <li><a href="./about.html">About</a></li>
-    <li><a href="./project.html">Project</a></li>
-    <li><a href="./blog.html">Blogs</a></li>
-    <li><a href="./contact.html">Contact</a></li>
+    <li><router-link to="/">Home</router-link></li>
+    <li><router-link to="/about">About</router-link></li>
+    <li><router-link to="/project">Projects</router-link></li>
+    <li><router-link to="/blog">Blog</router-link></li>
+    <li><router-link to="/tracker">Tracker</router-link></li>
+    <li><router-link to="/contact">Contact</router-link></li>
     <li>
       <ThemeToggle />
     </li>
@@ -23,6 +25,22 @@ header {
   align-items: center;
   justify-content: space-around;
   padding: 2rem;
+}
+
+.logo {
+  text-decoration: none;
+  padding: 0;
+}
+
+.logo h1 {
+  color: var(--text-primary);
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.logo:after {
+  display: none;
 }
 
 header > ul {
