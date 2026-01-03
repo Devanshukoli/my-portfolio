@@ -9,7 +9,8 @@
           <div class="row">
             <div class="col-lg-12">
               <div class="intro-message">
-                <h1>Softwar Engineer</h1>
+                <h1>Backend Engineer</h1>
+                <p class="intro-subtitle">Building Scalable Server-Side Solutions</p>
               </div>
             </div>
           </div>
