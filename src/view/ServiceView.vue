@@ -6,10 +6,8 @@
       <header class="section-header">
         <h3>Services</h3>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa,
-          saepe, assumenda commodi non modi aliquid debitis sunt quidem ipsum
-          praesentium quo! Modi assumenda architecto magnam tempora provident
-          voluptatum ratione fuga?
+          Offering specialized backend development services to build robust, scalable, and
+          high-performance server-side applications tailored to your business needs.
         </p>
       </header>
 
@@ -19,16 +17,16 @@
           <div class="box">
             <div class="icon" style="background: #000">
               <i
-                class="fa fa-clipboard service-icon"
+                class="fa fa-server service-icon"
                 style="color: #c59c35"
               ></i>
             </div>
 
-            <h4 class="title"><a href="">Service 2</a></h4>
+            <h4 class="title"><a href="">REST API Development</a></h4>
 
             <p class="description">
-              Laudem latine persequeris id sed, ex fabulas delectus quo. No vel
-              partiendo abhorreant vituperatoribus.
+              Design and build robust RESTful APIs with proper authentication,
+              validation, error handling, and comprehensive documentation.
             </p>
           </div>
         </div>
@@ -37,16 +35,16 @@
           <div class="box">
             <div class="icon" style="background: #000">
               <i
-                class="fa fa-clipboard service-icon"
+                class="fa fa-database service-icon"
                 style="color: #c59c35"
               ></i>
             </div>
 
-            <h4 class="title"><a href="">Service 2</a></h4>
+            <h4 class="title"><a href="">Database Design & Optimization</a></h4>
 
             <p class="description">
-              Laudem latine persequeris id sed, ex fabulas delectus quo. No vel
-              partiendo abhorreant vituperatoribus.
+              Expert database architecture and optimization for both SQL (MySQL, PostgreSQL)
+              and NoSQL (MongoDB) databases ensuring scalability and performance.
             </p>
           </div>
         </div>
@@ -55,16 +53,16 @@
           <div class="box">
             <div class="icon" style="background: #000">
               <i
-                class="fa fa-clipboard service-icon"
+                class="fa fa-code service-icon"
                 style="color: #c59c35"
               ></i>
             </div>
 
-            <h4 class="title"><a href="">Service 2</a></h4>
+            <h4 class="title"><a href="">Node.js Development</a></h4>
 
             <p class="description">
-              Laudem latine persequeris id sed, ex fabulas delectus quo. No vel
-              partiendo abhorreant vituperatoribus.
+              Building efficient server-side applications using Node.js and Express.js
+              with modern JavaScript/TypeScript best practices.
             </p>
           </div>
         </div>
@@ -73,16 +71,16 @@
           <div class="box">
             <div class="icon" style="background: #000">
               <i
-                class="fa fa-clipboard service-icon"
+                class="fa fa-sitemap service-icon"
                 style="color: #c59c35"
               ></i>
             </div>
 
-            <h4 class="title"><a href="">Service 2</a></h4>
+            <h4 class="title"><a href="">Microservices Architecture</a></h4>
 
             <p class="description">
-              Laudem latine persequeris id sed, ex fabulas delectus quo. No vel
-              partiendo abhorreant vituperatoribus.
+              Design and implement microservices-based architectures for scalable,
+              maintainable, and distributed systems.
             </p>
           </div>
         </div>
@@ -91,16 +89,16 @@
           <div class="box">
             <div class="icon" style="background: #000">
               <i
-                class="fa fa-clipboard service-icon"
+                class="fa fa-shield service-icon"
                 style="color: #c59c35"
               ></i>
             </div>
 
-            <h4 class="title"><a href="">Service 2</a></h4>
+            <h4 class="title"><a href="">API Security & Authentication</a></h4>
 
             <p class="description">
-              Laudem latine persequeris id sed, ex fabulas delectus quo. No vel
-              partiendo abhorreant vituperatoribus.
+              Implement secure authentication systems using JWT, OAuth, and industry-standard
+              security practices to protect your applications.
             </p>
           </div>
         </div>
@@ -109,16 +107,16 @@
           <div class="box">
             <div class="icon" style="background: #000">
               <i
-                class="fa fa-clipboard service-icon"
+                class="fa fa-cogs service-icon"
                 style="color: #c59c35"
               ></i>
             </div>
 
-            <h4 class="title"><a href="">Service 2</a></h4>
+            <h4 class="title"><a href="">Performance Optimization</a></h4>
 
             <p class="description">
-              Laudem latine persequeris id sed, ex fabulas delectus quo. No vel
-              partiendo abhorreant vituperatoribus.
+              Optimize application performance through caching strategies, query optimization,
+              and efficient resource management.
             </p>
           </div>
         </div>
@@ -315,7 +313,14 @@
   margin-top: -50px;
   text-shadow: 2px 1px 2px #000;
   font-size: 4em;
-  color: gray;
+  color: #c59c35;
+}
+
+.intro-subtitle {
+  font-size: 1.5em;
+  color: #f0f0f0;
+  text-shadow: 1px 1px 2px #000;
+  margin-top: 1rem;
 }
 
 @media (max-width: 767px) {

@@ -103,6 +103,22 @@ header {
   transition: all 0.3s ease;
 }
 
+.logo {
+  text-decoration: none;
+  padding: 0;
+}
+
+.logo h1 {
+  color: var(--text-primary);
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.logo:after {
+  display: none;
+}
+
 .mobile-menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(8px, 8px);
 }

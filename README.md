@@ -11,6 +11,8 @@ This repository contains the source code for my personal portfolio website. It's
 *   **Responsive Design:** The layout is fully responsive and adapts to various devices, from desktops to mobile phones.
 *   **Contact Form:** A functional contact form for visitors to get in touch.
 
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/Devanshukoli/my-portfolio?utm_source=oss&utm_medium=github&utm_campaign=Devanshukoli%2Fmy-portfolio&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
+
 ## 🛠️ Tech Stack
 
 *   **Framework:** [Vue.js 3](https://vuejs.org/)
