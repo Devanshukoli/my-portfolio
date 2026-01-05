@@ -58,7 +58,7 @@ const quickLinks = [
         </div>
         <p class="contact-email">
           <i class="fa fa-envelope"></i>
-          devanshu@example.com
+          kolidevanshu02@gmail.com
         </p>
       </div>
     </div>
