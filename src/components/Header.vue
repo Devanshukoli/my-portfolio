@@ -1,50 +1,90 @@
 <script setup>
-import { ref } from 'vue'
-import ThemeToggle from './ThemeToggle.vue'
+import { ref, onMounted, onUnmounted, watch } from "vue";
+import ThemeToggle from "./ThemeToggle.vue";
 
-const mobileMenuOpen = ref(false)
+const mobileMenuOpen = ref(false);
 
 const toggleMobileMenu = () => {
-  mobileMenuOpen.value = !mobileMenuOpen.value
-}
+  mobileMenuOpen.value = !mobileMenuOpen.value;
+};
 
 const closeMobileMenu = () => {
-  mobileMenuOpen.value = false
-}
+  mobileMenuOpen.value = false;
+};
+
+const handleEscapeKey = (event) => {
+  if (event.key === "Escape" && mobileMenuOpen.value) {
+    closeMobileMenu();
+  }
+};
+
+onMounted(() => {
+  document.addEventListener("keydown", handleEscapeKey);
+});
+
+onUnmounted(() => {
+  document.removeEventListener("keydown", handleEscapeKey);
+});
+
+watch(mobileMenuOpen, (isOpen) => {
+  if (isOpen) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "";
+  }
+});
 </script>
 
 <template>
-<header>
-  <router-link to="/" class="logo" @click="closeMobileMenu">
-    <h1>Devanshu Koli</h1>
-  </router-link>
-  
-  <!-- Hamburger Menu Button -->
-  <button 
-    class="mobile-menu-toggle" 
-    @click="toggleMobileMenu"
-    :class="{ 'active': mobileMenuOpen }"
-    aria-label="Toggle menu"
-  >
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+  <header>
+    <router-link to="/" class="logo" @click="closeMobileMenu">
+      <h1>Devanshu Koli</h1>
+    </router-link>
 
-  <nav :class="['nav-menu', { 'mobile-open': mobileMenuOpen }]">
-    <ul>
-      <li><router-link to="/" @click="closeMobileMenu">Home</router-link></li>
-      <li><router-link to="/about" @click="closeMobileMenu">About</router-link></li>
-      <li><router-link to="/project" @click="closeMobileMenu">Projects</router-link></li>
-      <li><router-link to="/blog" @click="closeMobileMenu">Blog</router-link></li>
-      <li><router-link to="/tracker" @click="closeMobileMenu">Tracker</router-link></li>
-      <li><router-link to="/contact" @click="closeMobileMenu">Contact</router-link></li>
-      <li class="theme-toggle-item">
-        <ThemeToggle />
-      </li>
-    </ul>
-  </nav>
-</header>
+    <!-- Hamburger Menu Button -->
+    <button
+      class="mobile-menu-toggle"
+      @click="toggleMobileMenu"
+      :class="{ active: mobileMenuOpen }"
+      aria-label="Toggle menu"
+      :aria-expanded="mobileMenuOpen"
+      aria-controls="main-navigation"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav :class="['nav-menu', { 'mobile-open': mobileMenuOpen }]">
+      <ul>
+        <li><router-link to="/" @click="closeMobileMenu">Home</router-link></li>
+        <li>
+          <router-link to="/about" @click="closeMobileMenu">About</router-link>
+        </li>
+        <li>
+          <router-link to="/project" @click="closeMobileMenu"
+            >Projects</router-link
+          >
+        </li>
+        <li>
+          <router-link to="/blog" @click="closeMobileMenu">Blog</router-link>
+        </li>
+        <li>
+          <router-link to="/tracker" @click="closeMobileMenu"
+            >Tracker</router-link
+          >
+        </li>
+        <li>
+          <router-link to="/contact" @click="closeMobileMenu"
+            >Contact</router-link
+          >
+        </li>
+        <li class="theme-toggle-item">
+          <ThemeToggle />
+        </li>
+      </ul>
+    </nav>
+  </header>
 </template>
 
 <style lang="css" scoped>
@@ -103,22 +143,6 @@ header {
   transition: all 0.3s ease;
 }
 
-.logo {
-  text-decoration: none;
-  padding: 0;
-}
-
-.logo h1 {
-  color: var(--text-primary);
-  margin: 0;
-  font-size: 1.8rem;
-  font-weight: 600;
-}
-
-.logo:after {
-  display: none;
-}
-
 .mobile-menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(8px, 8px);
 }
@@ -170,7 +194,9 @@ header {
   width: 0;
   height: 2px;
   background: #5776f6;
-  transition: width 0.3s ease, left 0.3s ease;
+  transition:
+    width 0.3s ease,
+    left 0.3s ease;
 }
 
 .nav-menu a:hover:after,
