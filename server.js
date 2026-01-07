@@ -16,6 +16,14 @@ app.use(cors(
   }
 ));
 
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.CONTACT_EMAIL,
+    pass: process.env.CONTACT_EMAIL_PASS,
+  },
+});
+
 const contactLimit = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minute
   max: 5, // limit each IP to 3 request per windowMs
@@ -36,17 +44,9 @@ app.post('/api/contact', contactLimit, async (req, res) => {
   const sanitizedMessage = DOMPurify.sanitize(message)
 
   try {
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.CONTACT_EMAIL,
-        pass: process.env.CONTACT_EMAIL_PASS,
-      },
-    });
-
     await transporter.sendMail({
       from: `Portfolio Website <${process.env.CONTACT_EMAIL}>`,
-      to: process.env.RECIPIENT_EMAIL,
+      to: process.env.RECIPIENT_EMAILl,
       subject: 'New Contact Form Submission from Portfolio Website',
       text: `You have received a new message from your portfolio website:\n\nName: ${sanitizedName}\nEmail: ${sanitizedEmail}\nMessage: ${sanitizedMessage}`,
       html: `<h3>New message from your portfolio website</h3><p><strong>Name:</strong> ${sanitizedName}<br/><strong>Email:</strong> ${sanitizedEmail}<br/><strong>Message:</strong><br/>${sanitizedMessage}</p>`
