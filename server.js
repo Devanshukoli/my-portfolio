@@ -38,6 +38,16 @@ app.post('/api/contact', contactLimit, async (req, res) => {
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'All fields are required.' });
   }
+  // validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res.status(400).json({ error: 'Invalid email format.' });
+  }
+
+  // valdiate email lengths
+  if (name.length > 100 || email.length > 100 || message.length > 2000) {
+    return res.status(400).json({ error: 'Input too long.' });
+  }
 
   const sanitizedName = DOMPurify.sanitize(name)
   const sanitizedEmail = DOMPurify.sanitize(email)
@@ -46,7 +56,7 @@ app.post('/api/contact', contactLimit, async (req, res) => {
   try {
     await transporter.sendMail({
       from: `Portfolio Website <${process.env.CONTACT_EMAIL}>`,
-      to: process.env.RECIPIENT_EMAILl,
+      to: process.env.RECIPIENT_EMAIL,
       subject: 'New Contact Form Submission from Portfolio Website',
       text: `You have received a new message from your portfolio website:\n\nName: ${sanitizedName}\nEmail: ${sanitizedEmail}\nMessage: ${sanitizedMessage}`,
       html: `<h3>New message from your portfolio website</h3><p><strong>Name:</strong> ${sanitizedName}<br/><strong>Email:</strong> ${sanitizedEmail}<br/><strong>Message:</strong><br/>${sanitizedMessage}</p>`
