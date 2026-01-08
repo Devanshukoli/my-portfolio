@@ -1,5 +1,6 @@
 import AboutView from "@/view/AboutView.vue";
-import BlogView from "@/view/BlogView.vue";
+import BlogList from "@/view/BlogList.vue";
+import BlogPost from "@/view/BlogPost.vue";
 import ContactView from "@/view/ContactView.vue";
 import HomeView from "@/view/HomeView.vue";
 import ProjectView from "@/view/ProjectView.vue";
@@ -22,7 +23,13 @@ const router = createRouter({
     {
       path: '/blog',
       name: 'blog',
-      component: BlogView
+      component: BlogList
+    },
+    {
+      path: '/blog/:slug',
+      name: 'blog-post',
+      component: BlogPost,
+      props: true
     },
     {
       path: '/contact',
