@@ -3,73 +3,24 @@
 <template>
   <section class="blog-section">
     <div class="container">
-      <div class="section-title">
-        <h2>Latest Blogs</h2>
-        <p>Thoughts, learnings & experiences</p>
-      </div>
+      <script setup>
+      import { onMounted } from 'vue'
+      import { useRouter } from 'vue-router'
 
-      <div class="blog-grid">
-        <article class="blog-card">
-          <div class="card-img">
-            <img
-              src="https://via.placeholder.com/400x250"
-              alt="Blog thumbnail"
-            />
-            <span class="tag">JavaScript</span>
-          </div>
-          <div class="card-content">
-            <h3>Understanding Modern JavaScript</h3>
-            <p>
-              Exploring the latest features and best practices in modern
-              JavaScript development...
-            </p>
-            <div class="card-footer">
-              <span class="date">June 15, 2024</span>
-              <a href="#" class="read-more">Read More →</a>
-            </div>
-          </div>
-        </article>
+      const router = useRouter()
+      onMounted(() => {
+        // Redirect legacy view to new blog list
+        router.replace({ name: 'blog' })
+      })
+      </script>
 
-        <article class="blog-card">
-          <div class="card-img">
-            <img
-              src="https://via.placeholder.com/400x250"
-              alt="Blog thumbnail"
-            />
-            <span class="tag">Web Dev</span>
-          </div>
-          <div class="card-content">
-            <h3>CSS Grid Mastery</h3>
-            <p>
-              A comprehensive guide to mastering CSS Grid layout system for
-              modern web design...
-            </p>
-            <div class="card-footer">
-              <span class="date">June 10, 2024</span>
-              <a href="#" class="read-more">Read More →</a>
-            </div>
-          </div>
-        </article>
-      </div>
+      <template>
+        <div aria-live="polite" class="visually-hidden">Redirecting to blog list…</div>
+      </template>
 
-      <!-- here comes the 'read more' button which will take it blog page of portfolio. -->
-      <div class="btn-frame">
-        <button class="custom-btn btn">
-          <a href="./blog.html">Read More</a>
-        </button>
-      </div>
-    </div>
-  </section>
-</template>
-
-<style scoped>
-.blog-section {
-  padding: 4rem 0;
-  background-color: var(--bg-secondary);
-}
-
-.section-title {
-  text-align: center;
+      <style scoped>
+      .visually-hidden { position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+      </style>
   margin-bottom: 3rem;
 }
 
