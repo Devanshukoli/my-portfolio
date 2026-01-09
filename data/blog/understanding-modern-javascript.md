@@ -3,7 +3,7 @@ title: Understanding Modern JavaScript
 date: 2024-06-15
 description: Exploring the latest features and best practices in modern JavaScript development
 tag: JavaScript
-image: https://via.placeholder.com/400x250
+image: /src/assets/blog_hero_javascript.png
 ---
 
 # Understanding Modern JavaScript

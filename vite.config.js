@@ -21,31 +21,37 @@ export default defineConfig({
   assetsInclude: ["**/*.md"],
   // Include markdown files as assets
   server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+      }
+    },
     fs: {
-      allow: ["src", "node_modules", "content"] // Allow serving files from project directories
+      allow: ["src", "node_modules", "data"] // Allow serving files from data directory
     }
   },
   // test: {
-    // projects: [{
-    //   extends: true,
-    //   plugins: [
-      // The plugin will run tests for the stories defined in your Storybook config
-      // See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
-      // storybookTest({
-      //   configDir: path.join(dirname, '.storybook')
-      // })],
-      // test: {
-      //   name: 'storybook',
-      //   browser: {
-      //     enabled: true,
-      //     headless: true,
-      //     provider: 'playwright',
-      //     instances: [{
-      //       browser: 'chromium'
-      //     }]
-      //   },
-      //   setupFiles: ['.storybook/vitest.setup.js']
-      // }
-    // }]
+  // projects: [{
+  //   extends: true,
+  //   plugins: [
+  // The plugin will run tests for the stories defined in your Storybook config
+  // See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
+  // storybookTest({
+  //   configDir: path.join(dirname, '.storybook')
+  // })],
+  // test: {
+  //   name: 'storybook',
+  //   browser: {
+  //     enabled: true,
+  //     headless: true,
+  //     provider: 'playwright',
+  //     instances: [{
+  //       browser: 'chromium'
+  //     }]
+  //   },
+  //   setupFiles: ['.storybook/vitest.setup.js']
+  // }
+  // }]
   // }
 });
