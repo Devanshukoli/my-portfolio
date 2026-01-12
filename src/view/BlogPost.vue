@@ -48,7 +48,7 @@ const formattedDate = computed(() => {
     <div class="container">
       <nav class="post-nav" v-motion="{
         initial: { opacity: 0, x: -20 },
-        enter: { opacity: 1, x: 0 }
+        visibleOnce: { opacity: 1, x: 0 }
       }">
         <button @click="goBack" class="back-btn" aria-label="Go back to blog list">
           <i class="fa fa-arrow-left" aria-hidden="true"></i>
@@ -69,7 +69,7 @@ const formattedDate = computed(() => {
 
       <article v-else-if="post" class="post-article" v-motion="{
         initial: { opacity: 0, y: 20 },
-        enter: { opacity: 1, y: 0 }
+        visibleOnce: { opacity: 1, y: 0 }
       }">
         <header class="post-header">
           <div class="post-meta">

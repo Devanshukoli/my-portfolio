@@ -1,6 +1,5 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { useMotion } from '@vueuse/motion'
 
 const posts = ref([])
 const loading = ref(true)
@@ -17,21 +16,6 @@ onMounted(async () => {
     loading.value = false
   }
 })
-
-// Motion Variants for the grid items
-const cardVariants = {
-  initial: { opacity: 0, y: 30 },
-  enter: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: 'spring',
-      stiffness: 100,
-      damping: 15,
-      delay: i * 100,
-    },
-  }),
-}
 </script>
 
 <template>
@@ -39,7 +23,7 @@ const cardVariants = {
     <div class="container">
       <header class="section-header" v-motion="{
         initial: { opacity: 0, y: -20 },
-        enter: { opacity: 1, y: 0 }
+        visibleOnce: { opacity: 1, y: 0 }
       }">
         <h1 id="blog-heading" class="gradient-text">Journal & Insights</h1>
         <p class="lead">Exploring the intersection of code, design, and continuous learning.</p>
@@ -55,19 +39,34 @@ const cardVariants = {
         <span>{{ error }}</span>
       </div>
 
+      <div v-else-if="posts.length === 0" class="status-container">
+        <span>No blog posts yet. Check back soon!</span>
+      </div>
+
       <div v-else class="blog-grid-wrapper">
         <ul class="posts-grid">
           <li
             v-for="(post, index) in posts"
             :key="post.slug"
-            v-motion="cardVariants"
-            :custom="index"
             class="post-card-item"
+            v-motion="{
+              initial: { opacity: 0, y: 30 },
+              visibleOnce: { 
+                opacity: 1, 
+                y: 0,
+                transition: {
+                  type: 'spring',
+                  stiffness: 100,
+                  damping: 15,
+                  delay: index * 100
+                }
+              }
+            }"
           >
             <article class="post-card">
               <router-link :to="`/blog/${post.slug}`" class="post-link" :aria-label="`Read more about ${post.frontmatter.title}`">
                 <div class="thumb">
-                  <img :src="post.frontmatter.image" :alt="''" role="presentation" />
+                  <img :src="post.frontmatter.image" :alt="post.frontmatter.title" />
                   <div class="tag-overlay">{{ post.frontmatter.tag }}</div>
                 </div>
                 <div class="post-content">

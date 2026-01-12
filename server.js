@@ -109,10 +109,7 @@ app.get('/api/posts/:slug', (req, res) => {
     const postsDir = path.join(__basedir, 'data', 'blog');
     const file = path.join(postsDir, `${req.params.slug}.md`);
 
-    console.log('Loading post:', file);
-
     if (!fs.existsSync(file)) {
-      console.log('Post file not found:', file);
       return res.status(404).json({ error: 'Not found' });
     }
 
