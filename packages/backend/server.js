@@ -5,7 +5,7 @@ const createDOMPurifier = require('dompurify');
 const { JSDOM } = require('jsdom');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit')
-require('dotenv').config();
+require('dotenv').config({ path: '../../.env' });
 
 const app = express();
 app.use(express.json());
@@ -81,7 +81,7 @@ const __basedir = __dirname;
 
 app.get('/api/posts', (req, res) => {
   try {
-    const postsDir = path.join(__basedir, 'data', 'blog');
+    const postsDir = path.join(__basedir, '..', 'shared', 'data', 'blog');
 
     if (!fs.existsSync(postsDir)) {
       return res.json([]);
@@ -106,7 +106,7 @@ app.get('/api/posts', (req, res) => {
 
 app.get('/api/posts/:slug', (req, res) => {
   try {
-    const postsDir = path.join(__basedir, 'data', 'blog');
+    const postsDir = path.join(__basedir, '..', 'shared', 'data', 'blog');
     const file = path.join(postsDir, `${req.params.slug}.md`);
 
     if (!fs.existsSync(file)) {

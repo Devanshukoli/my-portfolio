@@ -28,7 +28,7 @@ export default defineConfig({
       }
     },
     fs: {
-      allow: ["src", "node_modules", "data"] // Allow serving files from data directory
+      allow: [".", "../../.env", "../shared"] // Allow serving files from shared package
     }
   },
   // test: {
