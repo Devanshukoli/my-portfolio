@@ -74,36 +74,51 @@ app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 const fs = require('fs');
 const path = require('path');
 const matter = require('gray-matter');
-const marked = require('marked');
+const { marked } = require('marked');
+
+// Get the directory where server.js is located
+const __basedir = __dirname;
 
 app.get('/api/posts', (req, res) => {
   try {
-    const postsDir = path.join(process.cwd(), 'data', 'blog');
-    if (!fs.existsSync(postsDir)) return res.json([]);
-    const files = fs.readdirSync(postsDir).filter((f) => f.endsWith('.md'));
+    const postsDir = path.join(__basedir, 'data', 'blog');
+
+    if (!fs.existsSync(postsDir)) {
+      return res.json([]);
+    }
+
+    const files = fs.readdirSync(postsDir).filter((f) => f.endsWith('.md') && f !== 'README.md');
+
     const posts = files.map((file) => {
       const fullPath = path.join(postsDir, file);
       const raw = fs.readFileSync(fullPath, 'utf8');
       const { data: frontmatter, content } = matter(raw);
-      return { slug: file.replace(/\.md$/, ''), frontmatter, content: marked(content) };
+      return { slug: file.replace(/\.md$/, ''), frontmatter, content: marked.parse(content) };
     });
-    posts.sort((a,b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1));
+
+    posts.sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1));
     res.json(posts.map(p => ({ slug: p.slug, frontmatter: p.frontmatter })));
   } catch (err) {
+    console.error('Error loading posts:', err);
     res.status(500).json({ error: 'Failed to load posts' });
   }
 });
 
 app.get('/api/posts/:slug', (req, res) => {
   try {
-    const postsDir = path.join(process.cwd(), 'data', 'blog');
+    const postsDir = path.join(__basedir, 'data', 'blog');
     const file = path.join(postsDir, `${req.params.slug}.md`);
-    if (!fs.existsSync(file)) return res.status(404).json({ error: 'Not found' });
+
+    if (!fs.existsSync(file)) {
+      return res.status(404).json({ error: 'Not found' });
+    }
+
     const raw = fs.readFileSync(file, 'utf8');
     const { data: frontmatter, content } = matter(raw);
-    const html = marked(content);
+    const html = marked.parse(content);
     res.json({ slug: req.params.slug, frontmatter, content: html });
   } catch (err) {
+    console.error('Error loading post:', err);
     res.status(500).json({ error: 'Failed to load post' });
   }
 });
