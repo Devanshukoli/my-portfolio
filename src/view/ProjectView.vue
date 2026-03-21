@@ -145,7 +145,7 @@ const showDetails = (project) => {
       <section class="more-projects">
         <h2>Want to see more?</h2>
         <p>Check out my GitHub for more projects and contributions</p>
-        <a href="https://github.com" target="_blank" class="github-link">
+        <a href="https://github.com/devanshukoli" rel="noopener noreferrer" target="_blank" class="github-link">
           <span>🐙</span> Visit My GitHub
         </a>
       </section>
