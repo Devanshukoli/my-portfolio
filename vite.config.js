@@ -1,5 +1,5 @@
 /// <reference types="vitest/config" />
-import { defineConfig } from "vite";
+import { defineConfig, searchForWorkspaceRoot } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueDevTools from "vite-plugin-vue-devtools";
 import path from "path";
@@ -28,7 +28,7 @@ export default defineConfig({
       }
     },
     fs: {
-      allow: ["src", "node_modules", "data"] // Allow serving files from data directory
+      allow: [searchForWorkspaceRoot(process.cwd()), "src", "node_modules", "data"] // Allow serving files from data directory
     }
   },
   // test: {
