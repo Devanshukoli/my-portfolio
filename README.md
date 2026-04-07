@@ -86,3 +86,6 @@ devanshukoli-my-portfolio/
 ├── index.html          # Main HTML entry point
 ├── package.json        # Project dependencies and scripts
 └── vite.config.js      # Vite configuration
+
+# Author 
+- Devanshukoli
