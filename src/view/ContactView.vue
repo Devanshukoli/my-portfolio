@@ -74,7 +74,9 @@ const handleSubmit = async (e) => {
 #contactus {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  min-height: 65vh;
+  padding: 60px 20px;
 }
 
 .contact-container {
@@ -131,5 +133,63 @@ button {
 
 button:hover {
   background-color: #3e5fe0;
+}
+
+/* Responsive design for tablets and smaller screens */
+@media (max-width: 768px) {
+  #contactus {
+    min-height: auto;
+    padding: 40px 15px;
+  }
+
+  .contact-container {
+    padding: 30px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  input,
+  textarea {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 15px;
+  }
+}
+
+/* Responsive design for mobile phones */
+@media (max-width: 480px) {
+  #contactus {
+    padding: 30px 10px;
+  }
+
+  .contact-container {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  input,
+  textarea {
+    padding: 10px;
+    margin-bottom: 12px;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
 }
 </style>
