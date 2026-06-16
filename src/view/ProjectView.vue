@@ -4,7 +4,7 @@ import { ref } from 'vue'
 const projects = ref([
   {
     id: 1,
-    title: 'E-Commerce REST API',
+    title: 'Eisen-Hover Matrix',
     description: 'A comprehensive RESTful API for an e-commerce platform with user authentication, product management, cart functionality, and order processing.',
     technologies: ['Node.js', 'Express.js', 'MongoDB', 'JWT'],
     features: [
