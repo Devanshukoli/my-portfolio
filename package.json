@@ -1,5 +1,6 @@
 {
   "name": "my-portfolio",
+  "private": true,
   "version": "1.0.0",
   "description": "This is my portfolio website, I intended it made to showcase what i am as a software engineer.",
   "main": "index.js",
