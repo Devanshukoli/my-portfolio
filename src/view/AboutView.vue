@@ -1,122 +1,209 @@
 <script setup>
-const experience = [
+import { ref } from 'vue'
+
+const timeline = [
   {
-    area: 'Backend Development',
-    description: 'Building robust and scalable server-side applications using Node.js and Express.js'
+    period: '2024 — Present',
+    role: 'AI & Backend Systems Engineering',
+    focus: 'LLM Orchestration & Server Infrastructure',
+    description: 'Integrating Gemini & AI agent capabilities into high-throughput backend services while optimizing REST APIs for minimal latency.'
   },
   {
-    area: 'Database Design',
-    description: 'Designing and optimizing MongoDB and MySQL databases for performance and reliability'
+    period: '2023 — 2024',
+    role: 'Backend Systems Engineer',
+    focus: 'Scalable APIs & Database Architecture',
+    description: 'Designed distributed database schemas in PostgreSQL and MongoDB, implemented rate limiting, authentication, and secure middleware.'
   },
   {
-    area: 'API Development',
-    description: 'Creating RESTful APIs with proper authentication, validation, and documentation'
+    period: '2022 — 2023',
+    role: 'Software Developer',
+    focus: 'Full-Stack Web & Microservices',
+    description: 'Built full-stack applications with Vue.js, Node.js, and Express, focusing on real-time data handling and clean code modularity.'
   },
   {
-    area: 'System Architecture',
-    description: 'Designing microservices and distributed systems for high availability'
+    period: '2021 — 2022',
+    role: 'CS & Engineering Foundations',
+    focus: 'Algorithms & Systems Fundamentals',
+    description: 'Mastered core computer science principles, data structures, relational database normalization, and asynchronous I/O loops.'
+  }
+]
+
+const stats = [
+  { value: '3+', label: 'Years Engineering Experience' },
+  { value: '15+', label: 'APIs & Services Built' },
+  { value: '99.9%', label: 'Uptime Systems Mindset' },
+  { value: 'Sub-50ms', label: 'Average Target Latency' }
+]
+
+const mindsetCards = [
+  {
+    title: 'Backend Systems & Architecture',
+    icon: '⚡',
+    description: 'Obsessed with fast response times, resilient schema design, and robust error handling across distributed services.'
+  },
+  {
+    title: 'AI Engineering & Agentic Workflows',
+    icon: '🤖',
+    description: 'Pioneering intelligent backends by marrying standard REST pipelines with Gemini LLM function calling and contextual reasoning.'
+  },
+  {
+    title: 'Business-Driven Engineering',
+    icon: '🎯',
+    description: 'Every line of code serves a user need. I translate business goals into measurable, maintainable software systems.'
+  },
+  {
+    title: 'Relentless Curiosity',
+    icon: '🔍',
+    description: 'Driven by deep curiosity to understand runtime internals, system bottlenecks, and emerging software paradigms.'
+  }
+]
+
+const highlights = [
+  {
+    metric: 'Zero Downtime',
+    title: 'Database Schema Migrations',
+    detail: 'Executed non-blocking database migrations and caching strategies using Redis for uninterrupted service availability.'
+  },
+  {
+    metric: 'Production-Grade Security',
+    title: 'Hardened API Gateways',
+    detail: 'Implemented JWT token rotation, DOM sanitization, rate limiting, and strict CORS policies to protect application endpoints.'
+  },
+  {
+    metric: 'AI Agent Pipelines',
+    title: 'Intelligent Server Functions',
+    detail: 'Built server-side proxy layers using the Gemini API SDK, keeping secrets safe while offering context-aware responses.'
+  }
+]
+
+const skillGroups = [
+  {
+    category: 'Backend & Runtime',
+    items: ['Node.js', 'Express.js', 'RESTful APIs', 'WebSockets', 'Microservices', 'Middleware Design']
+  },
+  {
+    category: 'Databases & Storage',
+    items: ['MongoDB', 'PostgreSQL', 'MySQL', 'Redis Caching', 'Query Optimization', 'Data Modeling']
+  },
+  {
+    category: 'AI & Machine Learning',
+    items: ['Gemini API SDK', 'LLM Function Calling', 'Prompt Engineering', 'Vector Retrieval', 'AI Proxy Routes']
+  },
+  {
+    category: 'DevOps & Tooling',
+    items: ['Docker', 'Git & Version Control', 'JWT Authentication', 'Nodemailer / EmailJS', 'Vite', 'Vitest']
   }
 ]
 </script>
 
 <template>
-  <div class="about">
+  <div class="about-page">
     <div class="container">
-      <!-- Header Section -->
-      <section class="about-header">
-        <h1 class="title">About Me</h1>
-        <div class="intro">
-          <div class="profile-section">
-            <div class="profile-placeholder">
-              <span class="initials">DK</span>
+      <!-- Section Header -->
+      <header class="about-header">
+        <div class="eyebrow">Engineering Story & Philosophy</div>
+        <h1 class="main-title">Engineering with Purpose & Precision</h1>
+        <p class="lead-text">
+          I build resilient backend systems and intelligent AI services designed to solve high-impact business problems.
+        </p>
+      </header>
+
+      <!-- Key Stats Bar -->
+      <section class="stats-section" aria-label="Key Engineering Metrics">
+        <div class="stats-grid">
+          <div v-for="stat in stats" :key="stat.label" class="stat-card">
+            <span class="stat-value">{{ stat.value }}</span>
+            <span class="stat-label">{{ stat.label }}</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Story & Mindset Section -->
+      <section class="story-section">
+        <h2 class="section-title">My Journey & Mindset</h2>
+        <div class="story-grid">
+          <div class="story-box">
+            <h3>From Code to Architecture</h3>
+            <p>
+              My path started with a fascination for how data moves across networks. 
+              I quickly realized that slick interfaces mean nothing without a bulletproof server powering them.
+            </p>
+            <p>
+              Over the years, I shifted my focus to server-side engineering, database optimization, 
+              and designing APIs that remain responsive under heavy traffic.
+            </p>
+          </div>
+
+          <div class="story-box">
+            <h3>Embracing AI Engineering</h3>
+            <p>
+              As generative AI matured, I recognized the immense power of combining backend reliability 
+              with intelligent, LLM-driven features.
+            </p>
+            <p>
+              Today, I build server-side proxy routes and agentic workflows that leverage Gemini models 
+              to automate complex tasks while protecting user data and secrets.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Callout Mindset Cards -->
+      <section class="mindset-section">
+        <h2 class="section-title">Core Pillars</h2>
+        <div class="mindset-grid">
+          <div v-for="card in mindsetCards" :key="card.title" class="mindset-card">
+            <div class="card-header">
+              <span class="card-icon" aria-hidden="true">{{ card.icon }}</span>
+              <h3>{{ card.title }}</h3>
             </div>
-            <div class="profile-info">
-              <h2>Devanshu Koli</h2>
-              <p class="role">Backend Engineer</p>
+            <p>{{ card.description }}</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Engineering Timeline -->
+      <section class="timeline-section">
+        <h2 class="section-title">Engineering Career Timeline</h2>
+        <div class="timeline">
+          <div v-for="(item, index) in timeline" :key="index" class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-content">
+              <div class="timeline-meta">
+                <span class="timeline-period">{{ item.period }}</span>
+                <span class="timeline-focus">{{ item.focus }}</span>
+              </div>
+              <h3 class="timeline-role">{{ item.role }}</h3>
+              <p class="timeline-desc">{{ item.description }}</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Bio Section -->
-      <section class="bio-section">
-        <h2 class="section-title">My Journey</h2>
-        <div class="bio-content">
-          <p>
-            I'm a passionate backend engineer specializing in building high-performance server-side applications.
-            With expertise in Node.js, Express.js, and database technologies like MongoDB and MySQL, I create
-            scalable solutions that power modern web applications.
-          </p>
-          <p>
-            My approach to software development is rooted in writing clean, maintainable code and following
-            best practices. I believe in the importance of proper testing, documentation, and continuous learning
-            to stay current with evolving technologies.
-          </p>
-          <p>
-            Beyond coding, I'm committed to understanding business requirements and translating them into
-            technical solutions that deliver real value. I thrive in collaborative environments where I can
-            contribute to architectural decisions and mentor fellow developers.
-          </p>
-        </div>
-      </section>
-
-      <!-- Expertise Section -->
-      <section class="expertise-section">
-        <h2 class="section-title">Areas of Expertise</h2>
-        <div class="expertise-grid">
-          <div v-for="exp in experience" :key="exp.area" class="expertise-card">
-            <h3>{{ exp.area }}</h3>
-            <p>{{ exp.description }}</p>
+      <!-- Engineering Highlights Callouts -->
+      <section class="highlights-section">
+        <h2 class="section-title">Engineering Impact & Highlights</h2>
+        <div class="highlights-grid">
+          <div v-for="hl in highlights" :key="hl.title" class="highlight-card">
+            <div class="highlight-badge">{{ hl.metric }}</div>
+            <h3>{{ hl.title }}</h3>
+            <p>{{ hl.detail }}</p>
           </div>
         </div>
       </section>
 
-      <!-- Tech Stack Section -->
-      <section class="tech-stack">
-        <h2 class="section-title">Technology Stack</h2>
-        <div class="tech-categories">
-          <div class="tech-category">
-            <h3>Backend</h3>
-            <ul>
-              <li>Node.js</li>
-              <li>Express.js</li>
-              <li>REST APIs</li>
-              <li>WebSockets</li>
-            </ul>
+      <!-- Categorized Skills Matrix -->
+      <section class="skills-matrix-section">
+        <h2 class="section-title">Technical Capabilities</h2>
+        <div class="skills-matrix">
+          <div v-for="group in skillGroups" :key="group.category" class="skill-group-card">
+            <h3 class="group-title">{{ group.category }}</h3>
+            <div class="tags-wrapper">
+              <span v-for="item in group.items" :key="item" class="skill-tag">
+                {{ item }}
+              </span>
+            </div>
           </div>
-          <div class="tech-category">
-            <h3>Databases</h3>
-            <ul>
-              <li>MongoDB</li>
-              <li>MySQL</li>
-              <li>Redis</li>
-              <li>PostgreSQL</li>
-            </ul>
-          </div>
-          <div class="tech-category">
-            <h3>Tools & Others</h3>
-            <ul>
-              <li>Git & GitHub</li>
-              <li>Docker</li>
-              <li>JWT Authentication</li>
-              <li>API Documentation</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Interests Section -->
-      <section class="interests-section">
-        <h2 class="section-title">What I'm Interested In</h2>
-        <div class="interests-content">
-          <ul class="interests-list">
-            <li>🚀 Performance optimization and scalability</li>
-            <li>🔐 Security best practices and implementation</li>
-            <li>📊 System design and architecture patterns</li>
-            <li>🌱 Learning new technologies and frameworks</li>
-            <li>💡 Open source contributions</li>
-            <li>📝 Technical writing and knowledge sharing</li>
-          </ul>
         </div>
       </section>
     </div>
@@ -124,258 +211,337 @@ const experience = [
 </template>
 
 <style scoped>
-.about {
+.about-page {
   width: 100%;
-  padding: 4rem 2rem;
+  padding: 4rem 1.5rem;
   background: var(--bg-primary);
+  min-height: 85vh;
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
-/* Header Section */
+/* Header */
 .about-header {
-  text-align: center;
-  margin-bottom: 4rem;
+  text-align: left;
+  margin-bottom: 3rem;
 }
 
-.title {
-  font-size: 3rem;
+.eyebrow {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #5776f6;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.main-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.lead-text {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-width: 720px;
+}
+
+/* Common Section Title */
+.section-title {
+  font-size: 1.65rem;
   font-weight: 700;
   color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+section {
+  margin-bottom: 3.5rem;
+}
+
+/* Stats Section */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(120, 120, 120, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #5776f6;
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin-top: 0.2rem;
+}
+
+/* Story Section */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.story-box {
+  background: var(--bg-card);
+  padding: 1.75rem;
+  border-radius: 12px;
+  border: 1px solid rgba(120, 120, 120, 0.15);
+  box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+.story-box h3 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.story-box p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin-bottom: 0.85rem;
+}
+
+.story-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* Mindset Cards */
+.mindset-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.mindset-card {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(120, 120, 120, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mindset-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px var(--shadow-color);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-icon {
+  font-size: 1.3rem;
+}
+
+.card-header h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.mindset-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* Timeline Section */
+.timeline {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 2px solid rgba(87, 118, 246, 0.3);
+}
+
+.timeline-item {
+  position: relative;
   margin-bottom: 2rem;
 }
 
-.intro {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
+.timeline-item:last-child {
+  margin-bottom: 0;
 }
 
-.profile-section {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 2rem;
-  background: var(--bg-card);
-  border-radius: 12px;
-  box-shadow: 0 4px 15px var(--shadow-color);
-}
-
-.profile-placeholder {
-  width: 100px;
-  height: 100px;
+.timeline-marker {
+  position: absolute;
+  left: -2.05rem;
+  top: 0.2rem;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #5776f6 0%, #c59c35 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: white;
-  flex-shrink: 0;
+  background: #5776f6;
+  box-shadow: 0 0 0 4px var(--bg-primary);
 }
 
-.profile-info h2 {
-  font-size: 1.8rem;
+.timeline-content {
+  background: var(--bg-card);
+  padding: 1.25rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(120, 120, 120, 0.15);
+}
+
+.timeline-meta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.timeline-period {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #5776f6;
+}
+
+.timeline-focus {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.timeline-role {
+  font-size: 1.1rem;
+  font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
 }
 
-.role {
-  font-size: 1.2rem;
-  color: #c59c35;
-  font-weight: 600;
-}
-
-/* Common Section Styles */
-.section-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-section {
-  margin-bottom: 4rem;
-}
-
-/* Bio Section */
-.bio-content {
-  background: var(--bg-card);
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px var(--shadow-color);
-}
-
-.bio-content p {
-  font-size: 1.1rem;
-  line-height: 1.8;
+.timeline-desc {
+  font-size: 0.9rem;
+  line-height: 1.5;
   color: var(--text-secondary);
-  margin-bottom: 1.5rem;
 }
 
-.bio-content p:last-child {
-  margin-bottom: 0;
-}
-
-/* Expertise Section */
-.expertise-grid {
+/* Highlights Section */
+.highlights-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  gap: 1.25rem;
 }
 
-.expertise-card {
+.highlight-card {
   background: var(--bg-card);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px var(--shadow-color);
-  transition: all 0.3s ease;
-}
-
-.expertise-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px var(--shadow-color);
-}
-
-.expertise-card h3 {
-  font-size: 1.3rem;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-.expertise-card p {
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-/* Tech Stack Section */
-.tech-categories {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.tech-category {
-  background: var(--bg-card);
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px var(--shadow-color);
-}
-
-.tech-category h3 {
-  font-size: 1.4rem;
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-  border-bottom: 2px solid #c59c35;
-  padding-bottom: 0.5rem;
-}
-
-.tech-category ul {
-  list-style: none;
-  padding: 0;
-}
-
-.tech-category li {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  padding: 0.5rem 0;
-  padding-left: 1.5rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid rgba(120, 120, 120, 0.15);
   position: relative;
 }
 
-.tech-category li::before {
-  content: '▸';
-  position: absolute;
-  left: 0;
-  color: #5776f6;
-  font-weight: bold;
+.highlight-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.1);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
 }
 
-/* Interests Section */
-.interests-content {
-  background: var(--bg-card);
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px var(--shadow-color);
+.highlight-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
 }
 
-.interests-list {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.interests-list li {
-  font-size: 1.1rem;
+.highlight-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
   color: var(--text-secondary);
-  padding: 1rem;
+}
+
+/* Skills Matrix */
+.skills-matrix {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.skill-group-card {
+  background: var(--bg-card);
+  padding: 1.25rem;
+  border-radius: 10px;
+  border: 1px solid rgba(120, 120, 120, 0.15);
+}
+
+.group-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(120, 120, 120, 0.15);
+}
+
+.tags-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skill-tag {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-primary);
   background: var(--bg-secondary);
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid rgba(120, 120, 120, 0.1);
 }
 
-.interests-list li:hover {
-  transform: translateX(8px);
-  background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(87, 118, 246, 0.1) 100%);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .about {
-    padding: 2rem 1rem;
+/* Responsive */
+@media (max-width: 600px) {
+  .about-page {
+    padding: 2.5rem 1rem;
   }
 
-  .title {
-    font-size: 2.2rem;
+  .timeline {
+    padding-left: 1.2rem;
   }
 
-  .profile-section {
-    flex-direction: column;
-    text-align: center;
+  .timeline-marker {
+    left: -1.75rem;
   }
 
-  .section-title {
-    font-size: 1.6rem;
-  }
-
-  .expertise-grid,
-  .tech-categories,
-  .interests-list {
+  .story-grid,
+  .mindset-grid,
+  .highlights-grid,
+  .skills-matrix {
     grid-template-columns: 1fr;
-  }
-
-  .bio-content,
-  .interests-content {
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .title {
-    font-size: 1.8rem;
-  }
-
-  .profile-placeholder {
-    width: 80px;
-    height: 80px;
-    font-size: 2rem;
-  }
-
-  .profile-info h2 {
-    font-size: 1.5rem;
-  }
-
-  .section-title {
-    font-size: 1.4rem;
   }
 }
 </style>
