@@ -1,16 +1,9 @@
 <script setup>
 import { useRouter } from 'vue-router'
+import EngineeringSkills from '@/components/EngineeringSkills.vue'
+import EngineeringExperience from '@/components/EngineeringExperience.vue'
 
 const router = useRouter()
-
-const skills = [
-  { name: 'Node.js', icon: '🟢', description: 'Server-side JavaScript runtime' },
-  { name: 'Express.js', icon: '🚂', description: 'Fast, minimalist web framework' },
-  { name: 'MongoDB', icon: '🍃', description: 'NoSQL database solution' },
-  { name: 'MySQL', icon: '🐬', description: 'Relational database management' },
-  { name: 'REST APIs', icon: '🔌', description: 'RESTful API design & development' },
-  { name: 'Git', icon: '📦', description: 'Version control & collaboration' }
-]
 
 const navigateTo = (path) => {
   router.push(path)
@@ -103,19 +96,11 @@ const navigateTo = (path) => {
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills">
-      <div class="container">
-        <h2 class="section-title">Technical Skills</h2>
-        <div class="skills-grid">
-          <div v-for="skill in skills" :key="skill.name" class="skill-card">
-            <div class="skill-icon">{{ skill.icon }}</div>
-            <h3 class="skill-name">{{ skill.name }}</h3>
-            <p class="skill-description">{{ skill.description }}</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- Engineering Skills Section -->
+    <EngineeringSkills />
+
+    <!-- Engineering Experience Section -->
+    <EngineeringExperience />
 
     <!-- Quick Links Section -->
     <section class="quick-links">

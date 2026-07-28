@@ -1,32 +1,7 @@
 <script setup>
 import { ref } from 'vue'
-
-const timeline = [
-  {
-    period: '2024 — Present',
-    role: 'AI & Backend Systems Engineering',
-    focus: 'LLM Orchestration & Server Infrastructure',
-    description: 'Integrating Gemini & AI agent capabilities into high-throughput backend services while optimizing REST APIs for minimal latency.'
-  },
-  {
-    period: '2023 — 2024',
-    role: 'Backend Systems Engineer',
-    focus: 'Scalable APIs & Database Architecture',
-    description: 'Designed distributed database schemas in PostgreSQL and MongoDB, implemented rate limiting, authentication, and secure middleware.'
-  },
-  {
-    period: '2022 — 2023',
-    role: 'Software Developer',
-    focus: 'Full-Stack Web & Microservices',
-    description: 'Built full-stack applications with Vue.js, Node.js, and Express, focusing on real-time data handling and clean code modularity.'
-  },
-  {
-    period: '2021 — 2022',
-    role: 'CS & Engineering Foundations',
-    focus: 'Algorithms & Systems Fundamentals',
-    description: 'Mastered core computer science principles, data structures, relational database normalization, and asynchronous I/O loops.'
-  }
-]
+import EngineeringSkills from '@/components/EngineeringSkills.vue'
+import EngineeringExperience from '@/components/EngineeringExperience.vue'
 
 const stats = [
   { value: '3+', label: 'Years Engineering Experience' },
@@ -162,23 +137,8 @@ const skillGroups = [
         </div>
       </section>
 
-      <!-- Engineering Timeline -->
-      <section class="timeline-section">
-        <h2 class="section-title">Engineering Career Timeline</h2>
-        <div class="timeline">
-          <div v-for="(item, index) in timeline" :key="index" class="timeline-item">
-            <div class="timeline-marker" aria-hidden="true"></div>
-            <div class="timeline-content">
-              <div class="timeline-meta">
-                <span class="timeline-period">{{ item.period }}</span>
-                <span class="timeline-focus">{{ item.focus }}</span>
-              </div>
-              <h3 class="timeline-role">{{ item.role }}</h3>
-              <p class="timeline-desc">{{ item.description }}</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <!-- Engineering Experience Section -->
+      <EngineeringExperience />
 
       <!-- Engineering Highlights Callouts -->
       <section class="highlights-section">
@@ -193,19 +153,7 @@ const skillGroups = [
       </section>
 
       <!-- Categorized Skills Matrix -->
-      <section class="skills-matrix-section">
-        <h2 class="section-title">Technical Capabilities</h2>
-        <div class="skills-matrix">
-          <div v-for="group in skillGroups" :key="group.category" class="skill-group-card">
-            <h3 class="group-title">{{ group.category }}</h3>
-            <div class="tags-wrapper">
-              <span v-for="item in group.items" :key="item" class="skill-tag">
-                {{ item }}
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <EngineeringSkills />
     </div>
   </div>
 </template>

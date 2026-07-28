@@ -14,6 +14,7 @@ const quickLinks = [
   { name: 'Home', path: '/' },
   { name: 'About', path: '/about' },
   { name: 'Projects', path: '/project' },
+  { name: 'Dashboard', path: '/dashboard' },
   { name: 'Contact', path: '/contact' }
 ]
 </script>

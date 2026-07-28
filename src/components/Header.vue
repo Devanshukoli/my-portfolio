@@ -72,6 +72,11 @@ watch(mobileMenuOpen, (isOpen) => {
           >
         </li>
         <li>
+          <router-link to="/dashboard" @click="closeMobileMenu"
+            >Dashboard</router-link
+          >
+        </li>
+        <li>
           <router-link to="/contact" @click="closeMobileMenu"
             >Contact</router-link
           >
