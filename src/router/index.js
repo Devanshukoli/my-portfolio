@@ -5,6 +5,7 @@ import ProjectView from "@/view/ProjectView.vue";
 import ProjectDetailView from "@/view/ProjectDetailView.vue";
 import BlogView from "@/view/BlogView.vue";
 import BlogPostView from "@/view/BlogPostView.vue";
+import DashboardView from "@/view/DashboardView.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
@@ -44,6 +45,11 @@ const router = createRouter({
       path: '/blog/:slug',
       name: 'blog-post',
       component: BlogPostView
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: DashboardView
     }
   ]
 })
