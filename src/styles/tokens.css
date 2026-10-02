@@ -1,14 +1,39 @@
+@import "./fonts.css";
+
 :root {
   --bg: #f5f5f4;
   --fg: #1c1917;
   --muted: #78716c;
   --line: #e7e5e4;
   --accent: var(--fg);
-  --font-display: Georgia, serif;
-  --font-body: Georgia, serif;
-  --font-mono: ui-monospace, monospace;
+  --font-display: "Fraunces Variable", "Fraunces", Georgia, serif;
+  --font-body: "Source Serif 4", Georgia, serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+  --weight-display: 600;
+  --weight-body: 400;
+  --text-body: 1rem;
+  --leading-body: 1.5;
+  --text-h1: 3.75rem;
+  --leading-h1: 1;
+  --tracking-h1: -0.094rem;
+  --text-h2: 1.875rem;
+  --leading-h2: 1.2;
+  --text-small: 0.9rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 3rem;
+  --space-heading: var(--space-4);
   --measure: 40rem;
   --measure-wide: 46rem;
+  --hairline: 1px;
+  --focus-ring: 2px;
+  --icon: 1.25rem;
+  --icon-stroke: 1.5;
+  --hp-shift: -9999px;
+  --hp-size: 1px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --t-fast: 150ms;
   --t-base: 400ms;
@@ -35,7 +60,33 @@ body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-body);
-  line-height: 1.5;
+  font-weight: var(--weight-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: var(--weight-display);
+}
+
+h1 {
+  font-size: var(--text-h1);
+  line-height: var(--leading-h1);
+  letter-spacing: var(--tracking-h1);
+}
+
+h2 {
+  font-size: var(--text-h2);
+  line-height: var(--leading-h2);
+}
+
+code,
+pre,
+kbd {
+  font-family: var(--font-mono);
 }
 
 a {
@@ -43,14 +94,14 @@ a {
 }
 
 :focus-visible {
-  outline: 2px solid var(--fg);
-  outline-offset: 2px;
+  outline: var(--focus-ring) solid var(--fg);
+  outline-offset: var(--focus-ring);
 }
 
 .measure {
   max-width: var(--measure);
   margin-inline: auto;
-  padding: 1.5rem;
+  padding: var(--space-5);
 }
 
 .site-header,
@@ -58,22 +109,22 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
-  border-bottom: 1px solid var(--line);
-  padding-block: 0.75rem;
+  gap: var(--space-4);
+  border-bottom: var(--hairline) solid var(--line);
+  padding-block: var(--space-3);
 }
 
 .site-footer {
   border-bottom: 0;
-  border-top: 1px solid var(--line);
-  margin-top: 3rem;
+  border-top: var(--hairline) solid var(--line);
+  margin-top: var(--space-6);
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: var(--text-small);
 }
 
 .nav {
   display: flex;
-  gap: 1rem;
+  gap: var(--space-4);
   align-items: center;
 }
 
@@ -81,16 +132,21 @@ a {
   color: var(--muted);
 }
 
+.kicker {
+  color: var(--muted);
+  font-style: italic;
+}
+
 .stack {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--space-4);
 }
 
 label {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: var(--space-1);
 }
 
 input,
@@ -99,20 +155,20 @@ button {
   font: inherit;
   color: inherit;
   background: var(--bg);
-  border: 1px solid var(--line);
-  padding: 0.5rem;
+  border: var(--hairline) solid var(--line);
+  padding: var(--space-2);
 }
 
 .hp {
   position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
+  left: var(--hp-shift);
+  width: var(--hp-size);
+  height: var(--hp-size);
   overflow: hidden;
 }
 
 .status {
-  min-height: 1.5rem;
+  min-height: var(--space-5);
 }
 
 .status[data-kind="error"] {
@@ -121,5 +177,26 @@ button {
 
 hr {
   border: 0;
-  border-top: 1px solid var(--line);
+  border-top: var(--hairline) solid var(--line);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-heading);
+}
+
+.section-heading h2 {
+  margin: 0;
+}
+
+.icon {
+  width: var(--icon);
+  height: var(--icon);
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--icon-stroke);
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }

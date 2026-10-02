@@ -11,7 +11,7 @@ const posts = (await getCollection("blog"))
 
 <Base title="Devanshu Koli">
   <article class="stack">
-    <p class="muted">hi, my name is</p>
+    <p class="kicker">hi, my name is</p>
     <h1>devanshu koli</h1>
     <p>backend engineer · ai systems · writer</p>
     <p>
@@ -26,14 +26,26 @@ const posts = (await getCollection("blog"))
     <p class="muted">TODO(devanshu): confirm email and profile URLs in CONTENT_TODO.md</p>
 
     <hr />
-    <h2>about</h2>
+    <div class="section-heading">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="8" r="3"></circle>
+        <path d="M5 19c1.5-3 4-5 7-5s5.5 2 7 5"></path>
+      </svg>
+      <h2>about</h2>
+    </div>
     <p>
       TODO(devanshu): two short first-person paragraphs. Most of my work is Node.js and TypeScript
       with Postgres, Redis and MongoDB.
     </p>
 
     <hr />
-    <h2>writing</h2>
+    <div class="section-heading">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 5h14v14H5z"></path>
+        <path d="M8 9h8M8 12h8M8 15h5"></path>
+      </svg>
+      <h2>writing</h2>
+    </div>
     {
       posts.length === 0 ? (
         <p class="muted">TODO(devanshu): publish a debugging postmortem. Drafts stay off this list.</p>
@@ -51,15 +63,33 @@ const posts = (await getCollection("blog"))
     }
 
     <hr />
-    <h2>projects</h2>
+    <div class="section-heading">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 7h16v10H4z"></path>
+        <path d="M8 7V5h8v2"></path>
+      </svg>
+      <h2>projects</h2>
+    </div>
     <p class="muted">TODO(devanshu): confirm InterviewLab, RepoText, SkillBridge and one proof point each.</p>
 
     <hr />
-    <h2>experience</h2>
+    <div class="section-heading">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 19V5h10l6 6v8z"></path>
+        <path d="M14 5v6h6"></path>
+      </svg>
+      <h2>experience</h2>
+    </div>
     <p class="muted">TODO(devanshu): title, company, dates only after CONTENT_TODO VERIFY rows are confirmed.</p>
 
     <hr />
-    <h2>resume</h2>
+    <div class="section-heading">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 4h10v16H7z"></path>
+        <path d="M10 8h4"></path>
+      </svg>
+      <h2>resume</h2>
+    </div>
     <p class="muted">TODO(devanshu): add a PDF and a one-line resume note.</p>
 
     <hr />

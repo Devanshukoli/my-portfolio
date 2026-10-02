@@ -9,7 +9,7 @@ description: Stack and file map for Devanshu Koli's Astro portfolio. Read before
 
 1. Read `AGENTS.md` and `CONTENT_TODO.md`.
 2. Treat `src/content/blog` as the only post source.
-3. Put new colors, type, and motion in `src/styles/tokens.css`.
+3. Put new colors, type, space, and motion in `src/styles/tokens.css`. Load faces only from `src/styles/fonts.css`.
 4. Validate contact bodies with `parseContactInput` only.
 
 ## Examples
