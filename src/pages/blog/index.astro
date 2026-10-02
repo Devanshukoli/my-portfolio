@@ -1,0 +1,26 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog"))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Base title="Writing · Devanshu Koli">
+  <h1>writing</h1>
+  {
+    posts.length === 0 ? (
+      <p class="muted">TODO(devanshu): no published posts yet.</p>
+    ) : (
+      <ul>
+        {posts.map((post) => (
+          <li>
+            <a href={`/blog/${post.id}`}>{post.data.title}</a>
+            <p class="muted">{post.data.description}</p>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</Base>
