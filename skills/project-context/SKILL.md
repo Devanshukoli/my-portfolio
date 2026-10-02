@@ -1,16 +1,25 @@
-# Project Context Skill
+---
+name: project-context
+description: Stack and file map for Devanshu Koli's Astro portfolio. Read before editing the site, contact function, or blog collections.
+---
 
-Use this skill when an AI agent needs fast orientation for this portfolio project without rereading the full repository.
+# Project context
 
-## What To Read
+## Instructions
 
-Read `project-metadata.md` in this directory before making code changes. It contains the durable project map, architecture notes, commands, data flow, conventions, known issues, and cleanup history.
+1. Read `AGENTS.md` and `CONTENT_TODO.md`.
+2. Treat `src/content/blog` as the only post source.
+3. Put new colors, type, and motion in `src/styles/tokens.css`.
+4. Validate contact bodies with `parseContactInput` only.
 
-## How To Apply
+## Examples
 
-1. Use `project-metadata.md` as the first-pass source of truth.
-2. Verify any file you are about to edit directly in the repository.
-3. Preserve the current Vue 3 + Vite + Express architecture unless the user explicitly asks for a larger redesign.
-4. Keep blog content in `data/blog` and backend routes in `server.js`.
-5. Update this skill when architecture, routes, commands, env vars, or major workflows change.
+A new post is a markdown file under `src/content/blog` with title, date, description, tags, and draft.
 
+## Performance notes
+
+Pages are static. Do not add client markdown parsers.
+
+## Troubleshooting
+
+If `astro preview` accepts the contact form but mail never sends, the function is not running. Use `vercel dev` or a deployed preview.

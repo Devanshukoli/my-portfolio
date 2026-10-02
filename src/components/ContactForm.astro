@@ -1,0 +1,71 @@
+---
+interface Props {
+  heading?: string;
+}
+
+const { heading = "contact" } = Astro.props;
+---
+
+<section id="contact" aria-labelledby="contact-heading">
+  <h2 id="contact-heading">{heading}</h2>
+  <form id="contact-form" class="stack" method="post" action="/api/contact">
+    <label>
+      name
+      <input type="text" name="name" maxlength="100" required />
+    </label>
+    <label>
+      email
+      <input type="email" name="email" maxlength="100" required />
+    </label>
+    <label class="hp">
+      website
+      <input type="text" name="website" tabindex="-1" autocomplete="off" />
+    </label>
+    <label>
+      message
+      <textarea name="message" rows="6" maxlength="2000" required></textarea>
+    </label>
+    <button type="submit">send</button>
+    <p class="status" id="contact-status" role="status"></p>
+  </form>
+</section>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement | null;
+  const status = document.getElementById("contact-status");
+
+  form?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (!status) return;
+    status.textContent = "";
+    status.dataset.kind = "";
+
+    const data = new FormData(form);
+    const payload = {
+      name: String(data.get("name") ?? ""),
+      email: String(data.get("email") ?? ""),
+      message: String(data.get("message") ?? ""),
+      website: String(data.get("website") ?? ""),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const body = (await response.json()) as { ok?: boolean; error?: string };
+      if (!response.ok || !body.ok) {
+        status.dataset.kind = "error";
+        status.textContent = body.error ?? "Failed to send message.";
+        return;
+      }
+      status.dataset.kind = "ok";
+      status.textContent = "Message sent. I will reply when I can.";
+      form.reset();
+    } catch {
+      status.dataset.kind = "error";
+      status.textContent = "Failed to send message.";
+    }
+  });
+</script>

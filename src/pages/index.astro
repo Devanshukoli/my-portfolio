@@ -1,0 +1,68 @@
+---
+import Base from "../layouts/Base.astro";
+import ContactForm from "../components/ContactForm.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog"))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+---
+
+<Base title="Devanshu Koli">
+  <article class="stack">
+    <p class="muted">hi, my name is</p>
+    <h1>devanshu koli</h1>
+    <p>backend engineer · ai systems · writer</p>
+    <p>
+      <a href="mailto:kolidevanshu02@gmail.com">email</a>
+      /
+      <a href="https://github.com/devanshukoli">github</a>
+      /
+      <a href="https://linkedin.com/in/devanshukoli">linkedin</a>
+      /
+      <a href="https://x.com/devanshukoli">x</a>
+    </p>
+    <p class="muted">TODO(devanshu): confirm email and profile URLs in CONTENT_TODO.md</p>
+
+    <hr />
+    <h2>about</h2>
+    <p>
+      TODO(devanshu): two short first-person paragraphs. Most of my work is Node.js and TypeScript
+      with Postgres, Redis and MongoDB.
+    </p>
+
+    <hr />
+    <h2>writing</h2>
+    {
+      posts.length === 0 ? (
+        <p class="muted">TODO(devanshu): publish a debugging postmortem. Drafts stay off this list.</p>
+      ) : (
+        <ul>
+          {posts.map((post) => (
+            <li>
+              <a href={`/blog/${post.id}`}>{post.data.title}</a>
+              <span class="muted"> {post.data.date.toISOString().slice(0, 10)} </span>
+              <span>{post.data.description}</span>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+
+    <hr />
+    <h2>projects</h2>
+    <p class="muted">TODO(devanshu): confirm InterviewLab, RepoText, SkillBridge and one proof point each.</p>
+
+    <hr />
+    <h2>experience</h2>
+    <p class="muted">TODO(devanshu): title, company, dates only after CONTENT_TODO VERIFY rows are confirmed.</p>
+
+    <hr />
+    <h2>resume</h2>
+    <p class="muted">TODO(devanshu): add a PDF and a one-line resume note.</p>
+
+    <hr />
+    <ContactForm />
+  </article>
+</Base>
