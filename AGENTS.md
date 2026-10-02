@@ -22,6 +22,7 @@ Do not invent facts. Unknown copy stays `TODO(devanshu): ...`. Numbers, employer
 - `npm run build` typechecks and writes `dist`.
 - `npm run preview` serves `dist`.
 - `npm test` runs Vitest (`parseContactInput`).
+- `npm run check:tokens` fails if hex, font family names, rem, or px appear outside `src/styles/tokens.css` and `src/styles/fonts.css`.
 - Contact mail on Vercel needs `RESEND_API_KEY`, `CONTACT_TO`, and `CONTACT_FROM`. Local `astro preview` does not run `api/`. Use `vercel dev` when you need the function.
 
 ## Layout
